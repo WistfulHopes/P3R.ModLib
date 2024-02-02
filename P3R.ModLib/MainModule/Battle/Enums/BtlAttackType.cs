@@ -1,4 +1,4 @@
-﻿namespace P3R.ModLib.Battle.Enums;
+﻿namespace P3R.ModLib.MainModule.Battle.Enums;
 
 public enum BtlAttackType
 {

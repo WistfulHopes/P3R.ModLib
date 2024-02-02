@@ -1,8 +1,8 @@
 ﻿using System.Numerics;
-using P3R.ModLib.Battle.Enums;
+using P3R.ModLib.MainModule.Battle.Enums;
 using UE4SSDotNetFramework.Framework;
 
-namespace P3R.ModLib.Battle;
+namespace P3R.ModLib.MainModule.Battle;
 
 public class BtlActor : ObjectReference
 {
