@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="UE4SSDotNetFramework">
+        <HintPath>..\..\UE4SSDotNet\UE4SSDotNetFramework\bin\x64\Release\net8.0\UE4SSDotNetFramework.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
