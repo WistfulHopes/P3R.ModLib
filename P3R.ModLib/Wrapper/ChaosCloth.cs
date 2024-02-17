@@ -5,21 +5,21 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class ChaosClothConfig : ObjectBase<UChaosClothConfig>
 {
-
+    public ChaosClothConfig(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class ChaosClothSharedSimConfig : ObjectBase<UChaosClothSharedSimConfig>
 {
-
+    public ChaosClothSharedSimConfig(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class ChaosClothingSimulationFactory : ObjectBase<UChaosClothingSimulationFactory>
 {
-}
+    public ChaosClothingSimulationFactory(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class ChaosClothingInteractor : ObjectBase<UChaosClothingInteractor>
 {
-
+    public ChaosClothingInteractor(IntPtr pointer) : base(pointer) {}
     public void SetVelocityScale(FVector LinearVelocityScale, float AngularVelocityScale, float FictitiousAngularScale)
     {
         Span<(string name, object value)> @params = [
@@ -27,7 +27,7 @@ public unsafe class ChaosClothingInteractor : ObjectBase<UChaosClothingInteracto
             ("AngularVelocityScale", AngularVelocityScale), 
             ("FictitiousAngularScale", FictitiousAngularScale)
         ];
-        ProcessEvent(GetFunction("SetVelocityScale"),  @params);
+        ProcessEvent(GetFunction("SetVelocityScale"), @params);
     }
     public void SetMaterialLinear(float EdgeStiffness, float BendingStiffness, float AreaStiffness)
     {
@@ -36,21 +36,21 @@ public unsafe class ChaosClothingInteractor : ObjectBase<UChaosClothingInteracto
             ("BendingStiffness", BendingStiffness), 
             ("AreaStiffness", AreaStiffness)
         ];
-        ProcessEvent(GetFunction("SetMaterialLinear"),  @params);
+        ProcessEvent(GetFunction("SetMaterialLinear"), @params);
     }
     public void SetLongRangeAttachmentLinear(float TetherStiffness)
     {
         Span<(string name, object value)> @params = [
             ("TetherStiffness", TetherStiffness)
         ];
-        ProcessEvent(GetFunction("SetLongRangeAttachmentLinear"),  @params);
+        ProcessEvent(GetFunction("SetLongRangeAttachmentLinear"), @params);
     }
     public void SetLongRangeAttachment(FVector2D TetherStiffness)
     {
         Span<(string name, object value)> @params = [
             ("TetherStiffness", TetherStiffness)
         ];
-        ProcessEvent(GetFunction("SetLongRangeAttachment"),  @params);
+        ProcessEvent(GetFunction("SetLongRangeAttachment"), @params);
     }
     public void SetGravity(float GravityScale, bool bIsGravityOverridden, FVector GravityOverride)
     {
@@ -59,14 +59,14 @@ public unsafe class ChaosClothingInteractor : ObjectBase<UChaosClothingInteracto
             ("bIsGravityOverridden", bIsGravityOverridden), 
             ("GravityOverride", GravityOverride)
         ];
-        ProcessEvent(GetFunction("SetGravity"),  @params);
+        ProcessEvent(GetFunction("SetGravity"), @params);
     }
     public void SetDamping(float DampingCoefficient)
     {
         Span<(string name, object value)> @params = [
             ("DampingCoefficient", DampingCoefficient)
         ];
-        ProcessEvent(GetFunction("SetDamping"),  @params);
+        ProcessEvent(GetFunction("SetDamping"), @params);
     }
     public void SetCollision(float CollisionThickness, float FrictionCoefficient, bool bUseCCD, float SelfCollisionThickness)
     {
@@ -76,14 +76,14 @@ public unsafe class ChaosClothingInteractor : ObjectBase<UChaosClothingInteracto
             ("bUseCCD", bUseCCD), 
             ("SelfCollisionThickness", SelfCollisionThickness)
         ];
-        ProcessEvent(GetFunction("SetCollision"),  @params);
+        ProcessEvent(GetFunction("SetCollision"), @params);
     }
     public void SetAnimDriveLinear(float AnimDriveStiffness)
     {
         Span<(string name, object value)> @params = [
             ("AnimDriveStiffness", AnimDriveStiffness)
         ];
-        ProcessEvent(GetFunction("SetAnimDriveLinear"),  @params);
+        ProcessEvent(GetFunction("SetAnimDriveLinear"), @params);
     }
     public void SetAnimDrive(FVector2D AnimDriveStiffness, FVector2D AnimDriveDamping)
     {
@@ -91,7 +91,7 @@ public unsafe class ChaosClothingInteractor : ObjectBase<UChaosClothingInteracto
             ("AnimDriveStiffness", AnimDriveStiffness), 
             ("AnimDriveDamping", AnimDriveDamping)
         ];
-        ProcessEvent(GetFunction("SetAnimDrive"),  @params);
+        ProcessEvent(GetFunction("SetAnimDrive"), @params);
     }
     public void SetAerodynamics(float DragCoefficient, float LiftCoefficient, FVector WindVelocity)
     {
@@ -100,7 +100,7 @@ public unsafe class ChaosClothingInteractor : ObjectBase<UChaosClothingInteracto
             ("LiftCoefficient", LiftCoefficient), 
             ("WindVelocity", WindVelocity)
         ];
-        ProcessEvent(GetFunction("SetAerodynamics"),  @params);
+        ProcessEvent(GetFunction("SetAerodynamics"), @params);
     }
     public void ResetAndTeleport(bool bReset, bool bTeleport)
     {
@@ -108,16 +108,11 @@ public unsafe class ChaosClothingInteractor : ObjectBase<UChaosClothingInteracto
             ("bReset", bReset), 
             ("bTeleport", bTeleport)
         ];
-        ProcessEvent(GetFunction("ResetAndTeleport"),  @params);
+        ProcessEvent(GetFunction("ResetAndTeleport"), @params);
     }
 }
 
 public unsafe class ChaosClothingSimulationInteractor : ObjectBase<UChaosClothingSimulationInteractor>
 {
-}
-
-public unsafe class ChaosClothWeightedValue : ObjectBase<FChaosClothWeightedValue>
-{
-
-}
+    public ChaosClothingSimulationInteractor(IntPtr pointer) : base(pointer) {}}
 

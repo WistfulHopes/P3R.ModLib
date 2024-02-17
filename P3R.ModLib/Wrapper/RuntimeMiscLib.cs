@@ -5,14 +5,14 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class ML_MontageUtility : ObjectBase<UML_MontageUtility>
 {
-
+    public ML_MontageUtility(IntPtr pointer) : base(pointer) {}
     public void SetBlendOut(UAnimMontage* AnimMontage, float Time)
     {
         Span<(string name, object value)> @params = [
             ("AnimMontage", (IntPtr)AnimMontage), 
             ("Time", Time)
         ];
-        ProcessEvent(GetFunction("SetBlendOut"),  @params);
+        ProcessEvent(GetFunction("SetBlendOut"), @params);
     }
     public bool SetBlendInOutAutoWithParam(USkeletalMeshComponent* SkeletalMeshComp, UAnimMontage* AnimMontage, FName SectionName, float DecreaseBlendTime)
     {
@@ -22,7 +22,7 @@ public unsafe class ML_MontageUtility : ObjectBase<UML_MontageUtility>
             ("SectionName", SectionName), 
             ("DecreaseBlendTime", DecreaseBlendTime)
         ];
-        return ProcessEvent<bool>(GetFunction("SetBlendInOutAutoWithParam"),  @params);
+        return ProcessEvent<bool>(GetFunction("SetBlendInOutAutoWithParam"), @params);
     }
     public bool SetBlendInAuto(USkeletalMeshComponent* SkeletalMeshComp, UAnimMontage* AnimMontage, FName SectionName)
     {
@@ -31,7 +31,7 @@ public unsafe class ML_MontageUtility : ObjectBase<UML_MontageUtility>
             ("AnimMontage", (IntPtr)AnimMontage), 
             ("SectionName", SectionName)
         ];
-        return ProcessEvent<bool>(GetFunction("SetBlendInAuto"),  @params);
+        return ProcessEvent<bool>(GetFunction("SetBlendInAuto"), @params);
     }
     public void SetBlendIn(UAnimMontage* AnimMontage, float Time)
     {
@@ -39,7 +39,7 @@ public unsafe class ML_MontageUtility : ObjectBase<UML_MontageUtility>
             ("AnimMontage", (IntPtr)AnimMontage), 
             ("Time", Time)
         ];
-        ProcessEvent(GetFunction("SetBlendIn"),  @params);
+        ProcessEvent(GetFunction("SetBlendIn"), @params);
     }
     public FName GetNextSectionName(UAnimMontage* AnimMontage, FName SectionName, ref bool Success)
     {
@@ -48,21 +48,21 @@ public unsafe class ML_MontageUtility : ObjectBase<UML_MontageUtility>
             ("SectionName", SectionName), 
             ("Success", Success)
         ];
-        return ProcessEvent<FName>(GetFunction("GetNextSectionName"),  @params);
+        return ProcessEvent<FName>(GetFunction("GetNextSectionName"), @params);
     }
     public float GetBlendOut(UAnimMontage* AnimMontage)
     {
         Span<(string name, object value)> @params = [
             ("AnimMontage", (IntPtr)AnimMontage)
         ];
-        return ProcessEvent<float>(GetFunction("GetBlendOut"),  @params);
+        return ProcessEvent<float>(GetFunction("GetBlendOut"), @params);
     }
     public float GetBlendIn(UAnimMontage* AnimMontage)
     {
         Span<(string name, object value)> @params = [
             ("AnimMontage", (IntPtr)AnimMontage)
         ];
-        return ProcessEvent<float>(GetFunction("GetBlendIn"),  @params);
+        return ProcessEvent<float>(GetFunction("GetBlendIn"), @params);
     }
     public bool GetAnimationSequence(UAnimMontage* AnimMontage, FName SlotName, FName SectionName, ref UAnimSequenceBase* AnimSequence)
     {
@@ -72,19 +72,19 @@ public unsafe class ML_MontageUtility : ObjectBase<UML_MontageUtility>
             ("SectionName", SectionName), 
             ("AnimSequence", (IntPtr)AnimSequence)
         ];
-        return ProcessEvent<bool>(GetFunction("GetAnimationSequence"),  @params);
+        return ProcessEvent<bool>(GetFunction("GetAnimationSequence"), @params);
     }
 }
 
 public unsafe class ML_SplineActor : ObjectBase<AML_SplineActor>
 {
-
+    public ML_SplineActor(IntPtr pointer) : base(pointer) {}
     public void SetMarkerVisibility(bool Visibility)
     {
         Span<(string name, object value)> @params = [
             ("Visibility", Visibility)
         ];
-        ProcessEvent(GetFunction("SetMarkerVisibility"),  @params);
+        ProcessEvent(GetFunction("SetMarkerVisibility"), @params);
     }
     public void SetMarkerPosition(int Index, FVector Position)
     {
@@ -92,15 +92,15 @@ public unsafe class ML_SplineActor : ObjectBase<AML_SplineActor>
             ("Index", Index), 
             ("Position", Position)
         ];
-        ProcessEvent(GetFunction("SetMarkerPosition"),  @params);
+        ProcessEvent(GetFunction("SetMarkerPosition"), @params);
     }
 }
 
 public unsafe class ML_SplineComponent : ObjectBase<UML_SplineComponent>
 {
-}
+    public ML_SplineComponent(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class ML_TargetMarkerComponent : ObjectBase<UML_TargetMarkerComponent>
 {
-}
+    public ML_TargetMarkerComponent(IntPtr pointer) : base(pointer) {}}
 

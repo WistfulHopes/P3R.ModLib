@@ -5,11 +5,6 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class UdpMessagingSettings : ObjectBase<UUdpMessagingSettings>
 {
-
-}
-
-public unsafe class UdpMockMessage : ObjectBase<FUdpMockMessage>
-{
-
+    public UdpMessagingSettings(IntPtr pointer) : base(pointer) {}
 }
 

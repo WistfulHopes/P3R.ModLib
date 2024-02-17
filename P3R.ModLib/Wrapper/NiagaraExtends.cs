@@ -5,68 +5,68 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class AnimNotify_PlayNiagaraEffectEx : ObjectBase<UAnimNotify_PlayNiagaraEffectEx>
 {
-
+    public AnimNotify_PlayNiagaraEffectEx(IntPtr pointer) : base(pointer) {}
     public UNiagaraComponent* GetSpawnedEffect()
     {
         Span<(string name, object value)> @params = [
         ];
-        return (UNiagaraComponent*)ProcessEvent<IntPtr>(GetFunction("GetSpawnedEffect"),  @params);
+        return (UNiagaraComponent*)ProcessEvent<IntPtr>(GetFunction("GetSpawnedEffect"), @params);
     }
 }
 
 public unsafe class AnimNotifyState_NiagaraTrail : ObjectBase<UAnimNotifyState_NiagaraTrail>
 {
-
+    public AnimNotifyState_NiagaraTrail(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class AnimNotifyState_TimedNiagaraEffectEx : ObjectBase<UAnimNotifyState_TimedNiagaraEffectEx>
 {
-
+    public AnimNotifyState_TimedNiagaraEffectEx(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class NiagaraActorExtends : ObjectBase<ANiagaraActorExtends>
 {
-
+    public NiagaraActorExtends(IntPtr pointer) : base(pointer) {}
     public void SpawnNiagaraSystem(UNiagaraSystem* InAsset, float InSpeed)
     {
         Span<(string name, object value)> @params = [
             ("InAsset", (IntPtr)InAsset), 
             ("InSpeed", InSpeed)
         ];
-        ProcessEvent(GetFunction("SpawnNiagaraSystem"),  @params);
+        ProcessEvent(GetFunction("SpawnNiagaraSystem"), @params);
     }
     public void SetVisibleDebugArrow_DebugOnly(bool InVisible)
     {
         Span<(string name, object value)> @params = [
             ("InVisible", InVisible)
         ];
-        ProcessEvent(GetFunction("SetVisibleDebugArrow_DebugOnly"),  @params);
+        ProcessEvent(GetFunction("SetVisibleDebugArrow_DebugOnly"), @params);
     }
     public void SetDesiredAge(float InDeltTime)
     {
         Span<(string name, object value)> @params = [
             ("InDeltTime", InDeltTime)
         ];
-        ProcessEvent(GetFunction("SetDesiredAge"),  @params);
+        ProcessEvent(GetFunction("SetDesiredAge"), @params);
     }
     public void RestertEffect()
     {
         Span<(string name, object value)> @params = [
         ];
-        ProcessEvent(GetFunction("RestertEffect"),  @params);
+        ProcessEvent(GetFunction("RestertEffect"), @params);
     }
     public void OnComplete(UNiagaraComponent* PSystem)
     {
         Span<(string name, object value)> @params = [
             ("PSystem", (IntPtr)PSystem)
         ];
-        ProcessEvent(GetFunction("OnComplete"),  @params);
+        ProcessEvent(GetFunction("OnComplete"), @params);
     }
     public UNiagaraParameterCollectionInstance* GetParameterCollectionInstance()
     {
         Span<(string name, object value)> @params = [
         ];
-        return (UNiagaraParameterCollectionInstance*)ProcessEvent<IntPtr>(GetFunction("GetParameterCollectionInstance"),  @params);
+        return (UNiagaraParameterCollectionInstance*)ProcessEvent<IntPtr>(GetFunction("GetParameterCollectionInstance"), @params);
     }
     public ANiagaraActorExtends* CreateNiagaraActorExtends(APlayerController* InPC, UNiagaraSystem* InAsset, float InSpeed)
     {
@@ -75,52 +75,52 @@ public unsafe class NiagaraActorExtends : ObjectBase<ANiagaraActorExtends>
             ("InAsset", (IntPtr)InAsset), 
             ("InSpeed", InSpeed)
         ];
-        return (ANiagaraActorExtends*)ProcessEvent<IntPtr>(GetFunction("CreateNiagaraActorExtends"),  @params);
+        return (ANiagaraActorExtends*)ProcessEvent<IntPtr>(GetFunction("CreateNiagaraActorExtends"), @params);
     }
 }
 
 public unsafe class NiagaraCameraShake : ObjectBase<UNiagaraCameraShake>
 {
-}
+    public NiagaraCameraShake(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class NiagaraDataInterfaceBillboardEffect : ObjectBase<UNiagaraDataInterfaceBillboardEffect>
 {
-
+    public NiagaraDataInterfaceBillboardEffect(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class NiagaraDataInterfaceBillboardEffect2 : ObjectBase<UNiagaraDataInterfaceBillboardEffect2>
 {
-
+    public NiagaraDataInterfaceBillboardEffect2(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class NiagaraDataInterfaceCameraShake : ObjectBase<UNiagaraDataInterfaceCameraShake>
 {
-
+    public NiagaraDataInterfaceCameraShake(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class NiagaraDataInterfacePostProcess : ObjectBase<UNiagaraDataInterfacePostProcess>
 {
-
+    public NiagaraDataInterfacePostProcess(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class NiagaraDataInterfaceSetCustomStencil : ObjectBase<UNiagaraDataInterfaceSetCustomStencil>
 {
-
+    public NiagaraDataInterfaceSetCustomStencil(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class NiagaraDataInterfaceSyncActorPause : ObjectBase<UNiagaraDataInterfaceSyncActorPause>
 {
-}
+    public NiagaraDataInterfaceSyncActorPause(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class NiagaraExtendsFunctionLibrary : ObjectBase<UNiagaraExtendsFunctionLibrary>
 {
-
+    public NiagaraExtendsFunctionLibrary(IntPtr pointer) : base(pointer) {}
     public UNiagaraComponent* SpawnSystemAttachedOnCamera(FString WorldAssetPath)
     {
         Span<(string name, object value)> @params = [
             ("WorldAssetPath", WorldAssetPath)
         ];
-        return (UNiagaraComponent*)ProcessEvent<IntPtr>(GetFunction("SpawnSystemAttachedOnCamera"),  @params);
+        return (UNiagaraComponent*)ProcessEvent<IntPtr>(GetFunction("SpawnSystemAttachedOnCamera"), @params);
     }
     public UNiagaraComponent* SpawnSystemAttached(UNiagaraSystem* SystemTemplate, USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, EAttachLocation LocationType, bool bAutoDestroy, bool bAbsoluteLocation, bool bAbsoluteRotation, bool bAbsoluteScale, bool bAutoActivate, ENCPoolMethod PoolingMethod, bool bPreCullCheck)
     {
@@ -139,7 +139,7 @@ public unsafe class NiagaraExtendsFunctionLibrary : ObjectBase<UNiagaraExtendsFu
             ("PoolingMethod", PoolingMethod), 
             ("bPreCullCheck", bPreCullCheck)
         ];
-        return (UNiagaraComponent*)ProcessEvent<IntPtr>(GetFunction("SpawnSystemAttached"),  @params);
+        return (UNiagaraComponent*)ProcessEvent<IntPtr>(GetFunction("SpawnSystemAttached"), @params);
     }
     public AActor* SpawnActorFromBP(APlayerController* InPC, FString InBaseAssetPath, FTransform InBaseTransform)
     {
@@ -148,7 +148,7 @@ public unsafe class NiagaraExtendsFunctionLibrary : ObjectBase<UNiagaraExtendsFu
             ("InBaseAssetPath", InBaseAssetPath), 
             ("InBaseTransform", InBaseTransform)
         ];
-        return (AActor*)ProcessEvent<IntPtr>(GetFunction("SpawnActorFromBP"),  @params);
+        return (AActor*)ProcessEvent<IntPtr>(GetFunction("SpawnActorFromBP"), @params);
     }
     public void SetAllNiagaraPaused(UObject* InWorldContextObject, bool InPaused)
     {
@@ -156,28 +156,28 @@ public unsafe class NiagaraExtendsFunctionLibrary : ObjectBase<UNiagaraExtendsFu
             ("InWorldContextObject", (IntPtr)InWorldContextObject), 
             ("InPaused", InPaused)
         ];
-        ProcessEvent(GetFunction("SetAllNiagaraPaused"),  @params);
+        ProcessEvent(GetFunction("SetAllNiagaraPaused"), @params);
     }
     public void OpenAssetEditorWindowFromPath(FString FilePath)
     {
         Span<(string name, object value)> @params = [
             ("FilePath", FilePath)
         ];
-        ProcessEvent(GetFunction("OpenAssetEditorWindowFromPath"),  @params);
+        ProcessEvent(GetFunction("OpenAssetEditorWindowFromPath"), @params);
     }
     public void OpenAssetEditorWindowFromAsset(UObject* Asset)
     {
         Span<(string name, object value)> @params = [
             ("Asset", (IntPtr)Asset)
         ];
-        ProcessEvent(GetFunction("OpenAssetEditorWindowFromAsset"),  @params);
+        ProcessEvent(GetFunction("OpenAssetEditorWindowFromAsset"), @params);
     }
     public TArray<FString> GetWarldLevelNames(FString WorldAssetPath)
     {
         Span<(string name, object value)> @params = [
             ("WorldAssetPath", WorldAssetPath)
         ];
-        return ProcessEvent<TArray<FString>>(GetFunction("GetWarldLevelNames"),  @params);
+        return ProcessEvent<TArray<FString>>(GetFunction("GetWarldLevelNames"), @params);
     }
     public FVector GetNiagaraEmitterVectorValue(UNiagaraComponent* NiagaraComponent, FString InEmitterName, FString InValueName)
     {
@@ -186,7 +186,7 @@ public unsafe class NiagaraExtendsFunctionLibrary : ObjectBase<UNiagaraExtendsFu
             ("InEmitterName", InEmitterName), 
             ("InValueName", InValueName)
         ];
-        return ProcessEvent<FVector>(GetFunction("GetNiagaraEmitterVectorValue"),  @params);
+        return ProcessEvent<FVector>(GetFunction("GetNiagaraEmitterVectorValue"), @params);
     }
     public FQuat GetNiagaraEmitterQuatValue(UNiagaraComponent* NiagaraComponent, FString InEmitterName, FString InValueName)
     {
@@ -195,7 +195,7 @@ public unsafe class NiagaraExtendsFunctionLibrary : ObjectBase<UNiagaraExtendsFu
             ("InEmitterName", InEmitterName), 
             ("InValueName", InValueName)
         ];
-        return ProcessEvent<FQuat>(GetFunction("GetNiagaraEmitterQuatValue"),  @params);
+        return ProcessEvent<FQuat>(GetFunction("GetNiagaraEmitterQuatValue"), @params);
     }
     public FMatrix GetNiagaraEmitterMatrixValue(UNiagaraComponent* NiagaraComponent, FString InEmitterName, FString InValueName)
     {
@@ -204,7 +204,7 @@ public unsafe class NiagaraExtendsFunctionLibrary : ObjectBase<UNiagaraExtendsFu
             ("InEmitterName", InEmitterName), 
             ("InValueName", InValueName)
         ];
-        return ProcessEvent<FMatrix>(GetFunction("GetNiagaraEmitterMatrixValue"),  @params);
+        return ProcessEvent<FMatrix>(GetFunction("GetNiagaraEmitterMatrixValue"), @params);
     }
     public int GetNiagaraEmitterIntValue(UNiagaraComponent* NiagaraComponent, FString InEmitterName, FString InValueName)
     {
@@ -213,7 +213,7 @@ public unsafe class NiagaraExtendsFunctionLibrary : ObjectBase<UNiagaraExtendsFu
             ("InEmitterName", InEmitterName), 
             ("InValueName", InValueName)
         ];
-        return ProcessEvent<int>(GetFunction("GetNiagaraEmitterIntValue"),  @params);
+        return ProcessEvent<int>(GetFunction("GetNiagaraEmitterIntValue"), @params);
     }
     public float GetNiagaraEmitterFloatValue(UNiagaraComponent* NiagaraComponent, FString InEmitterName, FString InValueName)
     {
@@ -222,7 +222,7 @@ public unsafe class NiagaraExtendsFunctionLibrary : ObjectBase<UNiagaraExtendsFu
             ("InEmitterName", InEmitterName), 
             ("InValueName", InValueName)
         ];
-        return ProcessEvent<float>(GetFunction("GetNiagaraEmitterFloatValue"),  @params);
+        return ProcessEvent<float>(GetFunction("GetNiagaraEmitterFloatValue"), @params);
     }
     public bool GetNiagaraEmitterBoolValue(UNiagaraComponent* NiagaraComponent, FString InEmitterName, FString InValueName)
     {
@@ -231,21 +231,21 @@ public unsafe class NiagaraExtendsFunctionLibrary : ObjectBase<UNiagaraExtendsFu
             ("InEmitterName", InEmitterName), 
             ("InValueName", InValueName)
         ];
-        return ProcessEvent<bool>(GetFunction("GetNiagaraEmitterBoolValue"),  @params);
+        return ProcessEvent<bool>(GetFunction("GetNiagaraEmitterBoolValue"), @params);
     }
     public FPostProcessSettings GetFinalPostProcessSettings(UWorld* World)
     {
         Span<(string name, object value)> @params = [
             ("World", (IntPtr)World)
         ];
-        return ProcessEvent<FPostProcessSettings>(GetFunction("GetFinalPostProcessSettings"),  @params);
+        return ProcessEvent<FPostProcessSettings>(GetFunction("GetFinalPostProcessSettings"), @params);
     }
     public TArray<FString> GetEmitterNames(UNiagaraComponent* NiagaraComponent)
     {
         Span<(string name, object value)> @params = [
             ("NiagaraComponent", (IntPtr)NiagaraComponent)
         ];
-        return ProcessEvent<TArray<FString>>(GetFunction("GetEmitterNames"),  @params);
+        return ProcessEvent<TArray<FString>>(GetFunction("GetEmitterNames"), @params);
     }
 }
 

@@ -3,428 +3,68 @@ using UE4SSDotNetFramework.Framework;
 
 namespace P3R.ModLib.Wrapper;
 
-public unsafe class MaterialExpressionSpriteTextureSampler : ObjectBase<UMaterialExpressionSpriteTextureSampler>
-{
-
-}
-
-public unsafe class PaperCharacter : ObjectBase<APaperCharacter>
-{
-
-}
-
-public unsafe class PaperFlipbook : ObjectBase<UPaperFlipbook>
-{
-
-    public bool IsValidKeyFrameIndex(int Index)
-    {
-        Span<(string name, object value)> @params = [
-            ("Index", Index)
-        ];
-        return ProcessEvent<bool>(GetFunction("IsValidKeyFrameIndex"),  @params);
-    }
-    public float GetTotalDuration()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<float>(GetFunction("GetTotalDuration"),  @params);
-    }
-    public UPaperSprite* GetSpriteAtTime(float Time, bool bClampToEnds)
-    {
-        Span<(string name, object value)> @params = [
-            ("Time", Time), 
-            ("bClampToEnds", bClampToEnds)
-        ];
-        return (UPaperSprite*)ProcessEvent<IntPtr>(GetFunction("GetSpriteAtTime"),  @params);
-    }
-    public UPaperSprite* GetSpriteAtFrame(int FrameIndex)
-    {
-        Span<(string name, object value)> @params = [
-            ("FrameIndex", FrameIndex)
-        ];
-        return (UPaperSprite*)ProcessEvent<IntPtr>(GetFunction("GetSpriteAtFrame"),  @params);
-    }
-    public int GetNumKeyFrames()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<int>(GetFunction("GetNumKeyFrames"),  @params);
-    }
-    public int GetNumFrames()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<int>(GetFunction("GetNumFrames"),  @params);
-    }
-    public int GetKeyFrameIndexAtTime(float Time, bool bClampToEnds)
-    {
-        Span<(string name, object value)> @params = [
-            ("Time", Time), 
-            ("bClampToEnds", bClampToEnds)
-        ];
-        return ProcessEvent<int>(GetFunction("GetKeyFrameIndexAtTime"),  @params);
-    }
-}
-
-public unsafe class PaperFlipbookActor : ObjectBase<APaperFlipbookActor>
-{
-
-}
-
-public unsafe class PaperFlipbookComponent : ObjectBase<UPaperFlipbookComponent>
-{
-
-    public void Stop()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        ProcessEvent(GetFunction("Stop"),  @params);
-    }
-    public void SetSpriteColor(FLinearColor NewColor)
-    {
-        Span<(string name, object value)> @params = [
-            ("NewColor", NewColor)
-        ];
-        ProcessEvent(GetFunction("SetSpriteColor"),  @params);
-    }
-    public void SetPlayRate(float NewRate)
-    {
-        Span<(string name, object value)> @params = [
-            ("NewRate", NewRate)
-        ];
-        ProcessEvent(GetFunction("SetPlayRate"),  @params);
-    }
-    public void SetPlaybackPositionInFrames(int NewFramePosition, bool bFireEvents)
-    {
-        Span<(string name, object value)> @params = [
-            ("NewFramePosition", NewFramePosition), 
-            ("bFireEvents", bFireEvents)
-        ];
-        ProcessEvent(GetFunction("SetPlaybackPositionInFrames"),  @params);
-    }
-    public void SetPlaybackPosition(float NewPosition, bool bFireEvents)
-    {
-        Span<(string name, object value)> @params = [
-            ("NewPosition", NewPosition), 
-            ("bFireEvents", bFireEvents)
-        ];
-        ProcessEvent(GetFunction("SetPlaybackPosition"),  @params);
-    }
-    public void SetNewTime(float NewTime)
-    {
-        Span<(string name, object value)> @params = [
-            ("NewTime", NewTime)
-        ];
-        ProcessEvent(GetFunction("SetNewTime"),  @params);
-    }
-    public void SetLooping(bool bNewLooping)
-    {
-        Span<(string name, object value)> @params = [
-            ("bNewLooping", bNewLooping)
-        ];
-        ProcessEvent(GetFunction("SetLooping"),  @params);
-    }
-    public bool SetFlipbook(UPaperFlipbook* NewFlipbook)
-    {
-        Span<(string name, object value)> @params = [
-            ("NewFlipbook", (IntPtr)NewFlipbook)
-        ];
-        return ProcessEvent<bool>(GetFunction("SetFlipbook"),  @params);
-    }
-    public void ReverseFromEnd()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        ProcessEvent(GetFunction("ReverseFromEnd"),  @params);
-    }
-    public void Reverse()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        ProcessEvent(GetFunction("Reverse"),  @params);
-    }
-    public void PlayFromStart()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        ProcessEvent(GetFunction("PlayFromStart"),  @params);
-    }
-    public void Play()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        ProcessEvent(GetFunction("Play"),  @params);
-    }
-    public void OnRep_SourceFlipbook(UPaperFlipbook* OldFlipbook)
-    {
-        Span<(string name, object value)> @params = [
-            ("OldFlipbook", (IntPtr)OldFlipbook)
-        ];
-        ProcessEvent(GetFunction("OnRep_SourceFlipbook"),  @params);
-    }
-    public bool IsReversing()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<bool>(GetFunction("IsReversing"),  @params);
-    }
-    public bool IsPlaying()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<bool>(GetFunction("IsPlaying"),  @params);
-    }
-    public bool IsLooping()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<bool>(GetFunction("IsLooping"),  @params);
-    }
-    public FLinearColor GetSpriteColor()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<FLinearColor>(GetFunction("GetSpriteColor"),  @params);
-    }
-    public float GetPlayRate()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<float>(GetFunction("GetPlayRate"),  @params);
-    }
-    public int GetPlaybackPositionInFrames()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<int>(GetFunction("GetPlaybackPositionInFrames"),  @params);
-    }
-    public float GetPlaybackPosition()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<float>(GetFunction("GetPlaybackPosition"),  @params);
-    }
-    public int GetFlipbookLengthInFrames()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<int>(GetFunction("GetFlipbookLengthInFrames"),  @params);
-    }
-    public float GetFlipbookLength()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<float>(GetFunction("GetFlipbookLength"),  @params);
-    }
-    public float GetFlipbookFramerate()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<float>(GetFunction("GetFlipbookFramerate"),  @params);
-    }
-    public UPaperFlipbook* GetFlipbook()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return (UPaperFlipbook*)ProcessEvent<IntPtr>(GetFunction("GetFlipbook"),  @params);
-    }
-}
-
-public unsafe class PaperGroupedSpriteActor : ObjectBase<APaperGroupedSpriteActor>
-{
-
-}
-
-public unsafe class PaperGroupedSpriteComponent : ObjectBase<UPaperGroupedSpriteComponent>
-{
-
-    public bool UpdateInstanceTransform(int InstanceIndex, ref FTransform NewInstanceTransform, bool bWorldSpace, bool bMarkRenderStateDirty, bool bTeleport)
-    {
-        Span<(string name, object value)> @params = [
-            ("InstanceIndex", InstanceIndex), 
-            ("NewInstanceTransform", NewInstanceTransform), 
-            ("bWorldSpace", bWorldSpace), 
-            ("bMarkRenderStateDirty", bMarkRenderStateDirty), 
-            ("bTeleport", bTeleport)
-        ];
-        return ProcessEvent<bool>(GetFunction("UpdateInstanceTransform"),  @params);
-    }
-    public bool UpdateInstanceColor(int InstanceIndex, FLinearColor NewInstanceColor, bool bMarkRenderStateDirty)
-    {
-        Span<(string name, object value)> @params = [
-            ("InstanceIndex", InstanceIndex), 
-            ("NewInstanceColor", NewInstanceColor), 
-            ("bMarkRenderStateDirty", bMarkRenderStateDirty)
-        ];
-        return ProcessEvent<bool>(GetFunction("UpdateInstanceColor"),  @params);
-    }
-    public void SortInstancesAlongAxis(FVector WorldSpaceSortAxis)
-    {
-        Span<(string name, object value)> @params = [
-            ("WorldSpaceSortAxis", WorldSpaceSortAxis)
-        ];
-        ProcessEvent(GetFunction("SortInstancesAlongAxis"),  @params);
-    }
-    public bool RemoveInstance(int InstanceIndex)
-    {
-        Span<(string name, object value)> @params = [
-            ("InstanceIndex", InstanceIndex)
-        ];
-        return ProcessEvent<bool>(GetFunction("RemoveInstance"),  @params);
-    }
-    public bool GetInstanceTransform(int InstanceIndex, ref FTransform OutInstanceTransform, bool bWorldSpace)
-    {
-        Span<(string name, object value)> @params = [
-            ("InstanceIndex", InstanceIndex), 
-            ("OutInstanceTransform", OutInstanceTransform), 
-            ("bWorldSpace", bWorldSpace)
-        ];
-        return ProcessEvent<bool>(GetFunction("GetInstanceTransform"),  @params);
-    }
-    public int GetInstanceCount()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return ProcessEvent<int>(GetFunction("GetInstanceCount"),  @params);
-    }
-    public void ClearInstances()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        ProcessEvent(GetFunction("ClearInstances"),  @params);
-    }
-    public int AddInstance(ref FTransform Transform, UPaperSprite* Sprite, bool bWorldSpace, FLinearColor Color)
-    {
-        Span<(string name, object value)> @params = [
-            ("Transform", Transform), 
-            ("Sprite", (IntPtr)Sprite), 
-            ("bWorldSpace", bWorldSpace), 
-            ("Color", Color)
-        ];
-        return ProcessEvent<int>(GetFunction("AddInstance"),  @params);
-    }
-}
-
-public unsafe class PaperRuntimeSettings : ObjectBase<UPaperRuntimeSettings>
-{
-
-}
-
-public unsafe class PaperSprite : ObjectBase<UPaperSprite>
-{
-
-}
-
-public unsafe class PaperSpriteActor : ObjectBase<APaperSpriteActor>
-{
-
-}
-
-public unsafe class PaperSpriteAtlas : ObjectBase<UPaperSpriteAtlas>
-{
-}
-
-public unsafe class PaperSpriteBlueprintLibrary : ObjectBase<UPaperSpriteBlueprintLibrary>
-{
-
-    public FSlateBrush MakeBrushFromSprite(UPaperSprite* Sprite, int Width, int Height)
-    {
-        Span<(string name, object value)> @params = [
-            ("Sprite", (IntPtr)Sprite), 
-            ("Width", Width), 
-            ("Height", Height)
-        ];
-        return ProcessEvent<FSlateBrush>(GetFunction("MakeBrushFromSprite"),  @params);
-    }
-}
-
-public unsafe class PaperSpriteComponent : ObjectBase<UPaperSpriteComponent>
-{
-
-    public void SetSpriteColor(FLinearColor NewColor)
-    {
-        Span<(string name, object value)> @params = [
-            ("NewColor", NewColor)
-        ];
-        ProcessEvent(GetFunction("SetSpriteColor"),  @params);
-    }
-    public bool SetSprite(UPaperSprite* NewSprite)
-    {
-        Span<(string name, object value)> @params = [
-            ("NewSprite", (IntPtr)NewSprite)
-        ];
-        return ProcessEvent<bool>(GetFunction("SetSprite"),  @params);
-    }
-    public UPaperSprite* GetSprite()
-    {
-        Span<(string name, object value)> @params = [
-        ];
-        return (UPaperSprite*)ProcessEvent<IntPtr>(GetFunction("GetSprite"),  @params);
-    }
-}
-
 public unsafe class PaperTerrainActor : ObjectBase<APaperTerrainActor>
 {
-
+    public PaperTerrainActor(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class PaperTerrainComponent : ObjectBase<UPaperTerrainComponent>
 {
-
+    public PaperTerrainComponent(IntPtr pointer) : base(pointer) {}
     public void SetTerrainColor(FLinearColor NewColor)
     {
         Span<(string name, object value)> @params = [
             ("NewColor", NewColor)
         ];
-        ProcessEvent(GetFunction("SetTerrainColor"),  @params);
+        ProcessEvent(GetFunction("SetTerrainColor"), @params);
     }
 }
 
 public unsafe class PaperTerrainMaterial : ObjectBase<UPaperTerrainMaterial>
 {
-
+    public PaperTerrainMaterial(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class PaperTerrainSplineComponent : ObjectBase<UPaperTerrainSplineComponent>
 {
-}
+    public PaperTerrainSplineComponent(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class PaperTileLayer : ObjectBase<UPaperTileLayer>
 {
-
+    public PaperTileLayer(IntPtr pointer) : base(pointer) {}
 }
 
-public unsafe class PaperTileMap : ObjectBase<UPaperTileMap>
+public unsafe class MaterialExpressionSpriteTextureSampler : ObjectBase<UMaterialExpressionSpriteTextureSampler>
 {
-
+    public MaterialExpressionSpriteTextureSampler(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class PaperTileMapActor : ObjectBase<APaperTileMapActor>
 {
-
+    public PaperTileMapActor(IntPtr pointer) : base(pointer) {}
 }
 
-public unsafe class PaperTileInfo : ObjectBase<FPaperTileInfo>
+public unsafe class PaperCharacter : ObjectBase<APaperCharacter>
 {
-
+    public PaperCharacter(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class PaperTileMapComponent : ObjectBase<UPaperTileMapComponent>
 {
-
+    public PaperTileMapComponent(IntPtr pointer) : base(pointer) {}
     public void SetTileMapColor(FLinearColor NewColor)
     {
         Span<(string name, object value)> @params = [
             ("NewColor", NewColor)
         ];
-        ProcessEvent(GetFunction("SetTileMapColor"),  @params);
+        ProcessEvent(GetFunction("SetTileMapColor"), @params);
     }
     public bool SetTileMap(UPaperTileMap* NewTileMap)
     {
         Span<(string name, object value)> @params = [
             ("NewTileMap", (IntPtr)NewTileMap)
         ];
-        return ProcessEvent<bool>(GetFunction("SetTileMap"),  @params);
+        return ProcessEvent<bool>(GetFunction("SetTileMap"), @params);
     }
     public void SetTile(int X, int Y, int Layer, FPaperTileInfo NewValue)
     {
@@ -434,7 +74,7 @@ public unsafe class PaperTileMapComponent : ObjectBase<UPaperTileMapComponent>
             ("Layer", Layer), 
             ("NewValue", NewValue)
         ];
-        ProcessEvent(GetFunction("SetTile"),  @params);
+        ProcessEvent(GetFunction("SetTile"), @params);
     }
     public void SetLayerColor(FLinearColor NewColor, int Layer)
     {
@@ -442,7 +82,7 @@ public unsafe class PaperTileMapComponent : ObjectBase<UPaperTileMapComponent>
             ("NewColor", NewColor), 
             ("Layer", Layer)
         ];
-        ProcessEvent(GetFunction("SetLayerColor"),  @params);
+        ProcessEvent(GetFunction("SetLayerColor"), @params);
     }
     public void SetLayerCollision(int Layer, bool bHasCollision, bool bOverrideThickness, float CustomThickness, bool bOverrideOffset, float CustomOffset, bool bRebuildCollision)
     {
@@ -455,7 +95,7 @@ public unsafe class PaperTileMapComponent : ObjectBase<UPaperTileMapComponent>
             ("CustomOffset", CustomOffset), 
             ("bRebuildCollision", bRebuildCollision)
         ];
-        ProcessEvent(GetFunction("SetLayerCollision"),  @params);
+        ProcessEvent(GetFunction("SetLayerCollision"), @params);
     }
     public void SetDefaultCollisionThickness(float Thickness, bool bRebuildCollision)
     {
@@ -463,7 +103,7 @@ public unsafe class PaperTileMapComponent : ObjectBase<UPaperTileMapComponent>
             ("Thickness", Thickness), 
             ("bRebuildCollision", bRebuildCollision)
         ];
-        ProcessEvent(GetFunction("SetDefaultCollisionThickness"),  @params);
+        ProcessEvent(GetFunction("SetDefaultCollisionThickness"), @params);
     }
     public void ResizeMap(int NewWidthInTiles, int NewHeightInTiles)
     {
@@ -471,25 +111,25 @@ public unsafe class PaperTileMapComponent : ObjectBase<UPaperTileMapComponent>
             ("NewWidthInTiles", NewWidthInTiles), 
             ("NewHeightInTiles", NewHeightInTiles)
         ];
-        ProcessEvent(GetFunction("ResizeMap"),  @params);
+        ProcessEvent(GetFunction("ResizeMap"), @params);
     }
     public void RebuildCollision()
     {
         Span<(string name, object value)> @params = [
         ];
-        ProcessEvent(GetFunction("RebuildCollision"),  @params);
+        ProcessEvent(GetFunction("RebuildCollision"), @params);
     }
     public bool OwnsTileMap()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<bool>(GetFunction("OwnsTileMap"),  @params);
+        return ProcessEvent<bool>(GetFunction("OwnsTileMap"), @params);
     }
     public void MakeTileMapEditable()
     {
         Span<(string name, object value)> @params = [
         ];
-        ProcessEvent(GetFunction("MakeTileMapEditable"),  @params);
+        ProcessEvent(GetFunction("MakeTileMapEditable"), @params);
     }
     public void GetTilePolygon(int TileX, int TileY, ref TArray<FVector> Points, int LayerIndex, bool bWorldSpace)
     {
@@ -500,13 +140,13 @@ public unsafe class PaperTileMapComponent : ObjectBase<UPaperTileMapComponent>
             ("LayerIndex", LayerIndex), 
             ("bWorldSpace", bWorldSpace)
         ];
-        ProcessEvent(GetFunction("GetTilePolygon"),  @params);
+        ProcessEvent(GetFunction("GetTilePolygon"), @params);
     }
     public FLinearColor GetTileMapColor()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<FLinearColor>(GetFunction("GetTileMapColor"),  @params);
+        return ProcessEvent<FLinearColor>(GetFunction("GetTileMapColor"), @params);
     }
     public FVector GetTileCornerPosition(int TileX, int TileY, int LayerIndex, bool bWorldSpace)
     {
@@ -516,7 +156,7 @@ public unsafe class PaperTileMapComponent : ObjectBase<UPaperTileMapComponent>
             ("LayerIndex", LayerIndex), 
             ("bWorldSpace", bWorldSpace)
         ];
-        return ProcessEvent<FVector>(GetFunction("GetTileCornerPosition"),  @params);
+        return ProcessEvent<FVector>(GetFunction("GetTileCornerPosition"), @params);
     }
     public FVector GetTileCenterPosition(int TileX, int TileY, int LayerIndex, bool bWorldSpace)
     {
@@ -526,7 +166,7 @@ public unsafe class PaperTileMapComponent : ObjectBase<UPaperTileMapComponent>
             ("LayerIndex", LayerIndex), 
             ("bWorldSpace", bWorldSpace)
         ];
-        return ProcessEvent<FVector>(GetFunction("GetTileCenterPosition"),  @params);
+        return ProcessEvent<FVector>(GetFunction("GetTileCenterPosition"), @params);
     }
     public FPaperTileInfo GetTile(int X, int Y, int Layer)
     {
@@ -535,7 +175,7 @@ public unsafe class PaperTileMapComponent : ObjectBase<UPaperTileMapComponent>
             ("Y", Y), 
             ("Layer", Layer)
         ];
-        return ProcessEvent<FPaperTileInfo>(GetFunction("GetTile"),  @params);
+        return ProcessEvent<FPaperTileInfo>(GetFunction("GetTile"), @params);
     }
     public void GetMapSize(ref int MapWidth, ref int MapHeight, ref int NumLayers)
     {
@@ -544,14 +184,14 @@ public unsafe class PaperTileMapComponent : ObjectBase<UPaperTileMapComponent>
             ("MapHeight", MapHeight), 
             ("NumLayers", NumLayers)
         ];
-        ProcessEvent(GetFunction("GetMapSize"),  @params);
+        ProcessEvent(GetFunction("GetMapSize"), @params);
     }
     public FLinearColor GetLayerColor(int Layer)
     {
         Span<(string name, object value)> @params = [
             ("Layer", Layer)
         ];
-        return ProcessEvent<FLinearColor>(GetFunction("GetLayerColor"),  @params);
+        return ProcessEvent<FLinearColor>(GetFunction("GetLayerColor"), @params);
     }
     public void CreateNewTileMap(int MapWidth, int MapHeight, int TileWidth, int TileHeight, float PixelsPerUnrealUnit, bool bCreateLayer)
     {
@@ -563,24 +203,24 @@ public unsafe class PaperTileMapComponent : ObjectBase<UPaperTileMapComponent>
             ("PixelsPerUnrealUnit", PixelsPerUnrealUnit), 
             ("bCreateLayer", bCreateLayer)
         ];
-        ProcessEvent(GetFunction("CreateNewTileMap"),  @params);
+        ProcessEvent(GetFunction("CreateNewTileMap"), @params);
     }
     public UPaperTileLayer* AddNewLayer()
     {
         Span<(string name, object value)> @params = [
         ];
-        return (UPaperTileLayer*)ProcessEvent<IntPtr>(GetFunction("AddNewLayer"),  @params);
+        return (UPaperTileLayer*)ProcessEvent<IntPtr>(GetFunction("AddNewLayer"), @params);
     }
 }
 
 public unsafe class PaperTileSet : ObjectBase<UPaperTileSet>
 {
-
+    public PaperTileSet(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class TileMapBlueprintLibrary : ObjectBase<UTileMapBlueprintLibrary>
 {
-
+    public TileMapBlueprintLibrary(IntPtr pointer) : base(pointer) {}
     public FPaperTileInfo MakeTile(int TileIndex, UPaperTileSet* TileSet, bool bFlipH, bool bFlipV, bool bFlipD)
     {
         Span<(string name, object value)> @params = [
@@ -590,21 +230,21 @@ public unsafe class TileMapBlueprintLibrary : ObjectBase<UTileMapBlueprintLibrar
             ("bFlipV", bFlipV), 
             ("bFlipD", bFlipD)
         ];
-        return ProcessEvent<FPaperTileInfo>(GetFunction("MakeTile"),  @params);
+        return ProcessEvent<FPaperTileInfo>(GetFunction("MakeTile"), @params);
     }
     public FName GetTileUserData(FPaperTileInfo Tile)
     {
         Span<(string name, object value)> @params = [
             ("Tile", Tile)
         ];
-        return ProcessEvent<FName>(GetFunction("GetTileUserData"),  @params);
+        return ProcessEvent<FName>(GetFunction("GetTileUserData"), @params);
     }
     public FTransform GetTileTransform(FPaperTileInfo Tile)
     {
         Span<(string name, object value)> @params = [
             ("Tile", Tile)
         ];
-        return ProcessEvent<FTransform>(GetFunction("GetTileTransform"),  @params);
+        return ProcessEvent<FTransform>(GetFunction("GetTileTransform"), @params);
     }
     public void BreakTile(FPaperTileInfo Tile, ref int TileIndex, ref UPaperTileSet* TileSet, ref bool bFlipH, ref bool bFlipV, ref bool bFlipD)
     {
@@ -616,66 +256,362 @@ public unsafe class TileMapBlueprintLibrary : ObjectBase<UTileMapBlueprintLibrar
             ("bFlipV", bFlipV), 
             ("bFlipD", bFlipD)
         ];
-        ProcessEvent(GetFunction("BreakTile"),  @params);
+        ProcessEvent(GetFunction("BreakTile"), @params);
     }
 }
 
-public unsafe class IntMargin : ObjectBase<FIntMargin>
+public unsafe class PaperFlipbook : ObjectBase<UPaperFlipbook>
 {
-
+    public PaperFlipbook(IntPtr pointer) : base(pointer) {}
+    public bool IsValidKeyFrameIndex(int Index)
+    {
+        Span<(string name, object value)> @params = [
+            ("Index", Index)
+        ];
+        return ProcessEvent<bool>(GetFunction("IsValidKeyFrameIndex"), @params);
+    }
+    public float GetTotalDuration()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<float>(GetFunction("GetTotalDuration"), @params);
+    }
+    public UPaperSprite* GetSpriteAtTime(float Time, bool bClampToEnds)
+    {
+        Span<(string name, object value)> @params = [
+            ("Time", Time), 
+            ("bClampToEnds", bClampToEnds)
+        ];
+        return (UPaperSprite*)ProcessEvent<IntPtr>(GetFunction("GetSpriteAtTime"), @params);
+    }
+    public UPaperSprite* GetSpriteAtFrame(int FrameIndex)
+    {
+        Span<(string name, object value)> @params = [
+            ("FrameIndex", FrameIndex)
+        ];
+        return (UPaperSprite*)ProcessEvent<IntPtr>(GetFunction("GetSpriteAtFrame"), @params);
+    }
+    public int GetNumKeyFrames()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<int>(GetFunction("GetNumKeyFrames"), @params);
+    }
+    public int GetNumFrames()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<int>(GetFunction("GetNumFrames"), @params);
+    }
+    public int GetKeyFrameIndexAtTime(float Time, bool bClampToEnds)
+    {
+        Span<(string name, object value)> @params = [
+            ("Time", Time), 
+            ("bClampToEnds", bClampToEnds)
+        ];
+        return ProcessEvent<int>(GetFunction("GetKeyFrameIndexAtTime"), @params);
+    }
 }
 
-public unsafe class PaperFlipbookKeyFrame : ObjectBase<FPaperFlipbookKeyFrame>
+public unsafe class PaperFlipbookActor : ObjectBase<APaperFlipbookActor>
 {
-
+    public PaperFlipbookActor(IntPtr pointer) : base(pointer) {}
 }
 
-public unsafe class SpriteInstanceData : ObjectBase<FSpriteInstanceData>
+public unsafe class PaperFlipbookComponent : ObjectBase<UPaperFlipbookComponent>
 {
-
+    public PaperFlipbookComponent(IntPtr pointer) : base(pointer) {}
+    public void Stop()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        ProcessEvent(GetFunction("Stop"), @params);
+    }
+    public void SetSpriteColor(FLinearColor NewColor)
+    {
+        Span<(string name, object value)> @params = [
+            ("NewColor", NewColor)
+        ];
+        ProcessEvent(GetFunction("SetSpriteColor"), @params);
+    }
+    public void SetPlayRate(float NewRate)
+    {
+        Span<(string name, object value)> @params = [
+            ("NewRate", NewRate)
+        ];
+        ProcessEvent(GetFunction("SetPlayRate"), @params);
+    }
+    public void SetPlaybackPositionInFrames(int NewFramePosition, bool bFireEvents)
+    {
+        Span<(string name, object value)> @params = [
+            ("NewFramePosition", NewFramePosition), 
+            ("bFireEvents", bFireEvents)
+        ];
+        ProcessEvent(GetFunction("SetPlaybackPositionInFrames"), @params);
+    }
+    public void SetPlaybackPosition(float NewPosition, bool bFireEvents)
+    {
+        Span<(string name, object value)> @params = [
+            ("NewPosition", NewPosition), 
+            ("bFireEvents", bFireEvents)
+        ];
+        ProcessEvent(GetFunction("SetPlaybackPosition"), @params);
+    }
+    public void SetNewTime(float NewTime)
+    {
+        Span<(string name, object value)> @params = [
+            ("NewTime", NewTime)
+        ];
+        ProcessEvent(GetFunction("SetNewTime"), @params);
+    }
+    public void SetLooping(bool bNewLooping)
+    {
+        Span<(string name, object value)> @params = [
+            ("bNewLooping", bNewLooping)
+        ];
+        ProcessEvent(GetFunction("SetLooping"), @params);
+    }
+    public bool SetFlipbook(UPaperFlipbook* NewFlipbook)
+    {
+        Span<(string name, object value)> @params = [
+            ("NewFlipbook", (IntPtr)NewFlipbook)
+        ];
+        return ProcessEvent<bool>(GetFunction("SetFlipbook"), @params);
+    }
+    public void ReverseFromEnd()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        ProcessEvent(GetFunction("ReverseFromEnd"), @params);
+    }
+    public void Reverse()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        ProcessEvent(GetFunction("Reverse"), @params);
+    }
+    public void PlayFromStart()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        ProcessEvent(GetFunction("PlayFromStart"), @params);
+    }
+    public void Play()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        ProcessEvent(GetFunction("Play"), @params);
+    }
+    public void OnRep_SourceFlipbook(UPaperFlipbook* OldFlipbook)
+    {
+        Span<(string name, object value)> @params = [
+            ("OldFlipbook", (IntPtr)OldFlipbook)
+        ];
+        ProcessEvent(GetFunction("OnRep_SourceFlipbook"), @params);
+    }
+    public bool IsReversing()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<bool>(GetFunction("IsReversing"), @params);
+    }
+    public bool IsPlaying()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<bool>(GetFunction("IsPlaying"), @params);
+    }
+    public bool IsLooping()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<bool>(GetFunction("IsLooping"), @params);
+    }
+    public FLinearColor GetSpriteColor()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<FLinearColor>(GetFunction("GetSpriteColor"), @params);
+    }
+    public float GetPlayRate()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<float>(GetFunction("GetPlayRate"), @params);
+    }
+    public int GetPlaybackPositionInFrames()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<int>(GetFunction("GetPlaybackPositionInFrames"), @params);
+    }
+    public float GetPlaybackPosition()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<float>(GetFunction("GetPlaybackPosition"), @params);
+    }
+    public int GetFlipbookLengthInFrames()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<int>(GetFunction("GetFlipbookLengthInFrames"), @params);
+    }
+    public float GetFlipbookLength()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<float>(GetFunction("GetFlipbookLength"), @params);
+    }
+    public float GetFlipbookFramerate()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<float>(GetFunction("GetFlipbookFramerate"), @params);
+    }
+    public UPaperFlipbook* GetFlipbook()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return (UPaperFlipbook*)ProcessEvent<IntPtr>(GetFunction("GetFlipbook"), @params);
+    }
 }
 
-public unsafe class PaperSpriteSocket : ObjectBase<FPaperSpriteSocket>
+public unsafe class PaperGroupedSpriteActor : ObjectBase<APaperGroupedSpriteActor>
 {
-
+    public PaperGroupedSpriteActor(IntPtr pointer) : base(pointer) {}
 }
 
-public unsafe class PaperSpriteAtlasSlot : ObjectBase<FPaperSpriteAtlasSlot>
+public unsafe class PaperGroupedSpriteComponent : ObjectBase<UPaperGroupedSpriteComponent>
 {
-
+    public PaperGroupedSpriteComponent(IntPtr pointer) : base(pointer) {}
+    public bool UpdateInstanceTransform(int InstanceIndex, ref FTransform NewInstanceTransform, bool bWorldSpace, bool bMarkRenderStateDirty, bool bTeleport)
+    {
+        Span<(string name, object value)> @params = [
+            ("InstanceIndex", InstanceIndex), 
+            ("NewInstanceTransform", NewInstanceTransform), 
+            ("bWorldSpace", bWorldSpace), 
+            ("bMarkRenderStateDirty", bMarkRenderStateDirty), 
+            ("bTeleport", bTeleport)
+        ];
+        return ProcessEvent<bool>(GetFunction("UpdateInstanceTransform"), @params);
+    }
+    public bool UpdateInstanceColor(int InstanceIndex, FLinearColor NewInstanceColor, bool bMarkRenderStateDirty)
+    {
+        Span<(string name, object value)> @params = [
+            ("InstanceIndex", InstanceIndex), 
+            ("NewInstanceColor", NewInstanceColor), 
+            ("bMarkRenderStateDirty", bMarkRenderStateDirty)
+        ];
+        return ProcessEvent<bool>(GetFunction("UpdateInstanceColor"), @params);
+    }
+    public void SortInstancesAlongAxis(FVector WorldSpaceSortAxis)
+    {
+        Span<(string name, object value)> @params = [
+            ("WorldSpaceSortAxis", WorldSpaceSortAxis)
+        ];
+        ProcessEvent(GetFunction("SortInstancesAlongAxis"), @params);
+    }
+    public bool RemoveInstance(int InstanceIndex)
+    {
+        Span<(string name, object value)> @params = [
+            ("InstanceIndex", InstanceIndex)
+        ];
+        return ProcessEvent<bool>(GetFunction("RemoveInstance"), @params);
+    }
+    public bool GetInstanceTransform(int InstanceIndex, ref FTransform OutInstanceTransform, bool bWorldSpace)
+    {
+        Span<(string name, object value)> @params = [
+            ("InstanceIndex", InstanceIndex), 
+            ("OutInstanceTransform", OutInstanceTransform), 
+            ("bWorldSpace", bWorldSpace)
+        ];
+        return ProcessEvent<bool>(GetFunction("GetInstanceTransform"), @params);
+    }
+    public int GetInstanceCount()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return ProcessEvent<int>(GetFunction("GetInstanceCount"), @params);
+    }
+    public void ClearInstances()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        ProcessEvent(GetFunction("ClearInstances"), @params);
+    }
+    public int AddInstance(ref FTransform Transform, UPaperSprite* Sprite, bool bWorldSpace, FLinearColor Color)
+    {
+        Span<(string name, object value)> @params = [
+            ("Transform", Transform), 
+            ("Sprite", (IntPtr)Sprite), 
+            ("bWorldSpace", bWorldSpace), 
+            ("Color", Color)
+        ];
+        return ProcessEvent<int>(GetFunction("AddInstance"), @params);
+    }
 }
 
-public unsafe class PaperTerrainMaterialRule : ObjectBase<FPaperTerrainMaterialRule>
+public unsafe class PaperRuntimeSettings : ObjectBase<UPaperRuntimeSettings>
 {
-
+    public PaperRuntimeSettings(IntPtr pointer) : base(pointer) {}
 }
 
-public unsafe class PaperTileSetTerrain : ObjectBase<FPaperTileSetTerrain>
+public unsafe class PaperSprite : ObjectBase<UPaperSprite>
 {
-
+    public PaperSprite(IntPtr pointer) : base(pointer) {}
 }
 
-public unsafe class PaperTileMetadata : ObjectBase<FPaperTileMetadata>
+public unsafe class PaperSpriteActor : ObjectBase<APaperSpriteActor>
 {
-
+    public PaperSpriteActor(IntPtr pointer) : base(pointer) {}
 }
 
-public unsafe class SpriteGeometryCollection : ObjectBase<FSpriteGeometryCollection>
+public unsafe class PaperSpriteAtlas : ObjectBase<UPaperSpriteAtlas>
 {
+    public PaperSpriteAtlas(IntPtr pointer) : base(pointer) {}}
 
+public unsafe class PaperSpriteBlueprintLibrary : ObjectBase<UPaperSpriteBlueprintLibrary>
+{
+    public PaperSpriteBlueprintLibrary(IntPtr pointer) : base(pointer) {}
+    public FSlateBrush MakeBrushFromSprite(UPaperSprite* Sprite, int Width, int Height)
+    {
+        Span<(string name, object value)> @params = [
+            ("Sprite", (IntPtr)Sprite), 
+            ("Width", Width), 
+            ("Height", Height)
+        ];
+        return ProcessEvent<FSlateBrush>(GetFunction("MakeBrushFromSprite"), @params);
+    }
 }
 
-public unsafe class SpriteGeometryShape : ObjectBase<FSpriteGeometryShape>
+public unsafe class PaperSpriteComponent : ObjectBase<UPaperSpriteComponent>
 {
-
+    public PaperSpriteComponent(IntPtr pointer) : base(pointer) {}
+    public void SetSpriteColor(FLinearColor NewColor)
+    {
+        Span<(string name, object value)> @params = [
+            ("NewColor", NewColor)
+        ];
+        ProcessEvent(GetFunction("SetSpriteColor"), @params);
+    }
+    public bool SetSprite(UPaperSprite* NewSprite)
+    {
+        Span<(string name, object value)> @params = [
+            ("NewSprite", (IntPtr)NewSprite)
+        ];
+        return ProcessEvent<bool>(GetFunction("SetSprite"), @params);
+    }
+    public UPaperSprite* GetSprite()
+    {
+        Span<(string name, object value)> @params = [
+        ];
+        return (UPaperSprite*)ProcessEvent<IntPtr>(GetFunction("GetSprite"), @params);
+    }
 }
 
-public unsafe class SpriteDrawCallRecord : ObjectBase<FSpriteDrawCallRecord>
+public unsafe class PaperTileMap : ObjectBase<UPaperTileMap>
 {
-
-}
-
-public unsafe class SpriteAssetInitParameters : ObjectBase<FSpriteAssetInitParameters>
-{
+    public PaperTileMap(IntPtr pointer) : base(pointer) {}
 }
 

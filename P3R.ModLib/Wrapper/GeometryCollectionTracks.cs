@@ -5,26 +5,11 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class MovieSceneGeometryCollectionSection : ObjectBase<UMovieSceneGeometryCollectionSection>
 {
-
+    public MovieSceneGeometryCollectionSection(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class MovieSceneGeometryCollectionTrack : ObjectBase<UMovieSceneGeometryCollectionTrack>
 {
-
-}
-
-public unsafe class MovieSceneGeometryCollectionParams : ObjectBase<FMovieSceneGeometryCollectionParams>
-{
-
-}
-
-public unsafe class MovieSceneGeometryCollectionSectionTemplate : ObjectBase<FMovieSceneGeometryCollectionSectionTemplate>
-{
-
-}
-
-public unsafe class MovieSceneGeometryCollectionSectionTemplateParameters : ObjectBase<FMovieSceneGeometryCollectionSectionTemplateParameters>
-{
-
+    public MovieSceneGeometryCollectionTrack(IntPtr pointer) : base(pointer) {}
 }
 

@@ -5,21 +5,11 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class PlgAsset : ObjectBase<UPlgAsset>
 {
-
+    public PlgAsset(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class PlgPrimitiveComponent : ObjectBase<UPlgPrimitiveComponent>
 {
-
-}
-
-public unsafe class PlgData : ObjectBase<FPlgData>
-{
-
-}
-
-public unsafe class PlgPrimitiveData : ObjectBase<FPlgPrimitiveData>
-{
-
+    public PlgPrimitiveComponent(IntPtr pointer) : base(pointer) {}
 }
 

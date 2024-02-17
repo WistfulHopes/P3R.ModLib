@@ -5,14 +5,9 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class NiagaraMergeable : ObjectBase<UNiagaraMergeable>
 {
-}
+    public NiagaraMergeable(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class NiagaraDataInterfaceBase : ObjectBase<UNiagaraDataInterfaceBase>
 {
-}
-
-public unsafe class NiagaraCompileHash : ObjectBase<FNiagaraCompileHash>
-{
-
-}
+    public NiagaraDataInterfaceBase(IntPtr pointer) : base(pointer) {}}
 

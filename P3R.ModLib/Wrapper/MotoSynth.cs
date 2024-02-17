@@ -5,28 +5,23 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class MotoSynthPreset : ObjectBase<UMotoSynthPreset>
 {
-
+    public MotoSynthPreset(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class MotoSynthSource : ObjectBase<UMotoSynthSource>
 {
-
-}
-
-public unsafe class MotoSynthRuntimeSettings : ObjectBase<FMotoSynthRuntimeSettings>
-{
-
+    public MotoSynthSource(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class SynthComponentMoto : ObjectBase<USynthComponentMoto>
 {
-
+    public SynthComponentMoto(IntPtr pointer) : base(pointer) {}
     public void SetSettings(ref FMotoSynthRuntimeSettings InSettings)
     {
         Span<(string name, object value)> @params = [
             ("InSettings", InSettings)
         ];
-        ProcessEvent(GetFunction("SetSettings"),  @params);
+        ProcessEvent(GetFunction("SetSettings"), @params);
     }
     public void SetRPM(float InRPM, float InTimeSec)
     {
@@ -34,13 +29,13 @@ public unsafe class SynthComponentMoto : ObjectBase<USynthComponentMoto>
             ("InRPM", InRPM), 
             ("InTimeSec", InTimeSec)
         ];
-        ProcessEvent(GetFunction("SetRPM"),  @params);
+        ProcessEvent(GetFunction("SetRPM"), @params);
     }
     public bool IsEnabled()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<bool>(GetFunction("IsEnabled"),  @params);
+        return ProcessEvent<bool>(GetFunction("IsEnabled"), @params);
     }
     public void GetRPMRange(ref float OutMinRPM, ref float OutMaxRPM)
     {
@@ -48,12 +43,7 @@ public unsafe class SynthComponentMoto : ObjectBase<USynthComponentMoto>
             ("OutMinRPM", OutMinRPM), 
             ("OutMaxRPM", OutMaxRPM)
         ];
-        ProcessEvent(GetFunction("GetRPMRange"),  @params);
+        ProcessEvent(GetFunction("GetRPMRange"), @params);
     }
-}
-
-public unsafe class GrainTableEntry : ObjectBase<FGrainTableEntry>
-{
-
 }
 

@@ -5,11 +5,6 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class MyPluginObject : ObjectBase<UMyPluginObject>
 {
-
-}
-
-public unsafe class MyPluginStruct : ObjectBase<FMyPluginStruct>
-{
-
+    public MyPluginObject(IntPtr pointer) : base(pointer) {}
 }
 

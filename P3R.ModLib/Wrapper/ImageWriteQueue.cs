@@ -3,14 +3,9 @@ using UE4SSDotNetFramework.Framework;
 
 namespace P3R.ModLib.Wrapper;
 
-public unsafe class ImageWriteOptions : ObjectBase<FImageWriteOptions>
-{
-
-}
-
 public unsafe class ImageWriteBlueprintLibrary : ObjectBase<UImageWriteBlueprintLibrary>
 {
-
+    public ImageWriteBlueprintLibrary(IntPtr pointer) : base(pointer) {}
     public void ExportToDisk(UTexture* Texture, FString Filename, ref FImageWriteOptions Options)
     {
         Span<(string name, object value)> @params = [
@@ -18,7 +13,7 @@ public unsafe class ImageWriteBlueprintLibrary : ObjectBase<UImageWriteBlueprint
             ("Filename", Filename), 
             ("Options", Options)
         ];
-        ProcessEvent(GetFunction("ExportToDisk"),  @params);
+        ProcessEvent(GetFunction("ExportToDisk"), @params);
     }
 }
 

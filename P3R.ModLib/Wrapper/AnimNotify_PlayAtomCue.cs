@@ -5,12 +5,12 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class PlayAtomCue_C : ObjectBase<UPlayAtomCue_C>
 {
-
+    public PlayAtomCue_C(IntPtr pointer) : base(pointer) {}
     public FString GetNotifyName()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<FString>(GetFunction("GetNotifyName"),  @params);
+        return ProcessEvent<FString>(GetFunction("GetNotifyName"), @params);
     }
     public bool Received_Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation)
     {
@@ -18,7 +18,7 @@ public unsafe class PlayAtomCue_C : ObjectBase<UPlayAtomCue_C>
             ("MeshComp", (IntPtr)MeshComp), 
             ("Animation", (IntPtr)Animation)
         ];
-        return ProcessEvent<bool>(GetFunction("Received_Notify"),  @params);
+        return ProcessEvent<bool>(GetFunction("Received_Notify"), @params);
     }
 }
 

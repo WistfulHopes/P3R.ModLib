@@ -3,21 +3,16 @@ using UE4SSDotNetFramework.Framework;
 
 namespace P3R.ModLib.Wrapper;
 
-public unsafe class SequencerBindingProxy : ObjectBase<FSequencerBindingProxy>
-{
-
-}
-
 public unsafe class MovieSceneBindingExtensions : ObjectBase<UMovieSceneBindingExtensions>
 {
-
+    public MovieSceneBindingExtensions(IntPtr pointer) : base(pointer) {}
     public void SetParent(ref FSequencerBindingProxy InBinding, ref FSequencerBindingProxy InParentBinding)
     {
         Span<(string name, object value)> @params = [
             ("InBinding", InBinding), 
             ("InParentBinding", InParentBinding)
         ];
-        ProcessEvent(GetFunction("SetParent"),  @params);
+        ProcessEvent(GetFunction("SetParent"), @params);
     }
     public void SetName(ref FSequencerBindingProxy InBinding, FString InName)
     {
@@ -25,7 +20,7 @@ public unsafe class MovieSceneBindingExtensions : ObjectBase<UMovieSceneBindingE
             ("InBinding", InBinding), 
             ("InName", InName)
         ];
-        ProcessEvent(GetFunction("SetName"),  @params);
+        ProcessEvent(GetFunction("SetName"), @params);
     }
     public void SetDisplayName(ref FSequencerBindingProxy InBinding, ref FText InDisplayName)
     {
@@ -33,7 +28,7 @@ public unsafe class MovieSceneBindingExtensions : ObjectBase<UMovieSceneBindingE
             ("InBinding", InBinding), 
             ("InDisplayName", InDisplayName)
         ];
-        ProcessEvent(GetFunction("SetDisplayName"),  @params);
+        ProcessEvent(GetFunction("SetDisplayName"), @params);
     }
     public void RemoveTrack(ref FSequencerBindingProxy InBinding, UMovieSceneTrack* TrackToRemove)
     {
@@ -41,14 +36,14 @@ public unsafe class MovieSceneBindingExtensions : ObjectBase<UMovieSceneBindingE
             ("InBinding", InBinding), 
             ("TrackToRemove", (IntPtr)TrackToRemove)
         ];
-        ProcessEvent(GetFunction("RemoveTrack"),  @params);
+        ProcessEvent(GetFunction("RemoveTrack"), @params);
     }
     public void Remove(ref FSequencerBindingProxy InBinding)
     {
         Span<(string name, object value)> @params = [
             ("InBinding", InBinding)
         ];
-        ProcessEvent(GetFunction("Remove"),  @params);
+        ProcessEvent(GetFunction("Remove"), @params);
     }
     public void MoveBindingContents(ref FSequencerBindingProxy SourceBindingId, ref FSequencerBindingProxy DestinationBindingId)
     {
@@ -56,70 +51,70 @@ public unsafe class MovieSceneBindingExtensions : ObjectBase<UMovieSceneBindingE
             ("SourceBindingId", SourceBindingId), 
             ("DestinationBindingId", DestinationBindingId)
         ];
-        ProcessEvent(GetFunction("MoveBindingContents"),  @params);
+        ProcessEvent(GetFunction("MoveBindingContents"), @params);
     }
     public bool IsValid(ref FSequencerBindingProxy InBinding)
     {
         Span<(string name, object value)> @params = [
             ("InBinding", InBinding)
         ];
-        return ProcessEvent<bool>(GetFunction("IsValid"),  @params);
+        return ProcessEvent<bool>(GetFunction("IsValid"), @params);
     }
     public TArray<IntPtr> GetTracks(ref FSequencerBindingProxy InBinding)
     {
         Span<(string name, object value)> @params = [
             ("InBinding", InBinding)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetTracks"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetTracks"), @params);
     }
     public UClass* GetPossessedObjectClass(ref FSequencerBindingProxy InBinding)
     {
         Span<(string name, object value)> @params = [
             ("InBinding", InBinding)
         ];
-        return (UClass*)ProcessEvent<IntPtr>(GetFunction("GetPossessedObjectClass"),  @params);
+        return (UClass*)ProcessEvent<IntPtr>(GetFunction("GetPossessedObjectClass"), @params);
     }
     public FSequencerBindingProxy GetParent(ref FSequencerBindingProxy InBinding)
     {
         Span<(string name, object value)> @params = [
             ("InBinding", InBinding)
         ];
-        return ProcessEvent<FSequencerBindingProxy>(GetFunction("GetParent"),  @params);
+        return ProcessEvent<FSequencerBindingProxy>(GetFunction("GetParent"), @params);
     }
     public UObject* GetObjectTemplate(ref FSequencerBindingProxy InBinding)
     {
         Span<(string name, object value)> @params = [
             ("InBinding", InBinding)
         ];
-        return (UObject*)ProcessEvent<IntPtr>(GetFunction("GetObjectTemplate"),  @params);
+        return (UObject*)ProcessEvent<IntPtr>(GetFunction("GetObjectTemplate"), @params);
     }
     public FString GetName(ref FSequencerBindingProxy InBinding)
     {
         Span<(string name, object value)> @params = [
             ("InBinding", InBinding)
         ];
-        return ProcessEvent<FString>(GetFunction("GetName"),  @params);
+        return ProcessEvent<FString>(GetFunction("GetName"), @params);
     }
     public FGuid GetId(ref FSequencerBindingProxy InBinding)
     {
         Span<(string name, object value)> @params = [
             ("InBinding", InBinding)
         ];
-        return ProcessEvent<FGuid>(GetFunction("GetId"),  @params);
+        return ProcessEvent<FGuid>(GetFunction("GetId"), @params);
     }
     public FText GetDisplayName(ref FSequencerBindingProxy InBinding)
     {
         Span<(string name, object value)> @params = [
             ("InBinding", InBinding)
         ];
-        return ProcessEvent<FText>(GetFunction("GetDisplayName"),  @params);
+        return ProcessEvent<FText>(GetFunction("GetDisplayName"), @params);
     }
     public TArray<FSequencerBindingProxy> GetChildPossessables(ref FSequencerBindingProxy InBinding)
     {
         Span<(string name, object value)> @params = [
             ("InBinding", InBinding)
         ];
-        return ProcessEvent<TArray<FSequencerBindingProxy>>(GetFunction("GetChildPossessables"),  @params);
+        return ProcessEvent<TArray<FSequencerBindingProxy>>(GetFunction("GetChildPossessables"), @params);
     }
     public TArray<IntPtr> FindTracksByType(ref FSequencerBindingProxy InBinding, TSubclassOf<UMovieSceneTrack> TrackType)
     {
@@ -127,7 +122,7 @@ public unsafe class MovieSceneBindingExtensions : ObjectBase<UMovieSceneBindingE
             ("InBinding", InBinding), 
             ("TrackType", TrackType)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("FindTracksByType"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("FindTracksByType"), @params);
     }
     public TArray<IntPtr> FindTracksByExactType(ref FSequencerBindingProxy InBinding, TSubclassOf<UMovieSceneTrack> TrackType)
     {
@@ -135,7 +130,7 @@ public unsafe class MovieSceneBindingExtensions : ObjectBase<UMovieSceneBindingE
             ("InBinding", InBinding), 
             ("TrackType", TrackType)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("FindTracksByExactType"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("FindTracksByExactType"), @params);
     }
     public UMovieSceneTrack* AddTrack(ref FSequencerBindingProxy InBinding, TSubclassOf<UMovieSceneTrack> TrackType)
     {
@@ -143,39 +138,39 @@ public unsafe class MovieSceneBindingExtensions : ObjectBase<UMovieSceneBindingE
             ("InBinding", InBinding), 
             ("TrackType", TrackType)
         ];
-        return (UMovieSceneTrack*)ProcessEvent<IntPtr>(GetFunction("AddTrack"),  @params);
+        return (UMovieSceneTrack*)ProcessEvent<IntPtr>(GetFunction("AddTrack"), @params);
     }
 }
 
 public unsafe class MovieSceneEventTrackExtensions : ObjectBase<UMovieSceneEventTrackExtensions>
 {
-
+    public MovieSceneEventTrackExtensions(IntPtr pointer) : base(pointer) {}
     public UMovieSceneEventTriggerSection* AddEventTriggerSection(UMovieSceneEventTrack* InTrack)
     {
         Span<(string name, object value)> @params = [
             ("InTrack", (IntPtr)InTrack)
         ];
-        return (UMovieSceneEventTriggerSection*)ProcessEvent<IntPtr>(GetFunction("AddEventTriggerSection"),  @params);
+        return (UMovieSceneEventTriggerSection*)ProcessEvent<IntPtr>(GetFunction("AddEventTriggerSection"), @params);
     }
     public UMovieSceneEventRepeaterSection* AddEventRepeaterSection(UMovieSceneEventTrack* InTrack)
     {
         Span<(string name, object value)> @params = [
             ("InTrack", (IntPtr)InTrack)
         ];
-        return (UMovieSceneEventRepeaterSection*)ProcessEvent<IntPtr>(GetFunction("AddEventRepeaterSection"),  @params);
+        return (UMovieSceneEventRepeaterSection*)ProcessEvent<IntPtr>(GetFunction("AddEventRepeaterSection"), @params);
     }
 }
 
 public unsafe class MovieSceneFolderExtensions : ObjectBase<UMovieSceneFolderExtensions>
 {
-
+    public MovieSceneFolderExtensions(IntPtr pointer) : base(pointer) {}
     public bool SetFolderName(UMovieSceneFolder* Folder, FName InFolderName)
     {
         Span<(string name, object value)> @params = [
             ("Folder", (IntPtr)Folder), 
             ("InFolderName", InFolderName)
         ];
-        return ProcessEvent<bool>(GetFunction("SetFolderName"),  @params);
+        return ProcessEvent<bool>(GetFunction("SetFolderName"), @params);
     }
     public bool SetFolderColor(UMovieSceneFolder* Folder, FColor InFolderColor)
     {
@@ -183,7 +178,7 @@ public unsafe class MovieSceneFolderExtensions : ObjectBase<UMovieSceneFolderExt
             ("Folder", (IntPtr)Folder), 
             ("InFolderColor", InFolderColor)
         ];
-        return ProcessEvent<bool>(GetFunction("SetFolderColor"),  @params);
+        return ProcessEvent<bool>(GetFunction("SetFolderColor"), @params);
     }
     public bool RemoveChildObjectBinding(UMovieSceneFolder* Folder, FSequencerBindingProxy InObjectBinding)
     {
@@ -191,7 +186,7 @@ public unsafe class MovieSceneFolderExtensions : ObjectBase<UMovieSceneFolderExt
             ("Folder", (IntPtr)Folder), 
             ("InObjectBinding", InObjectBinding)
         ];
-        return ProcessEvent<bool>(GetFunction("RemoveChildObjectBinding"),  @params);
+        return ProcessEvent<bool>(GetFunction("RemoveChildObjectBinding"), @params);
     }
     public bool RemoveChildMasterTrack(UMovieSceneFolder* Folder, UMovieSceneTrack* InMasterTrack)
     {
@@ -199,7 +194,7 @@ public unsafe class MovieSceneFolderExtensions : ObjectBase<UMovieSceneFolderExt
             ("Folder", (IntPtr)Folder), 
             ("InMasterTrack", (IntPtr)InMasterTrack)
         ];
-        return ProcessEvent<bool>(GetFunction("RemoveChildMasterTrack"),  @params);
+        return ProcessEvent<bool>(GetFunction("RemoveChildMasterTrack"), @params);
     }
     public bool RemoveChildFolder(UMovieSceneFolder* TargetFolder, UMovieSceneFolder* FolderToRemove)
     {
@@ -207,42 +202,42 @@ public unsafe class MovieSceneFolderExtensions : ObjectBase<UMovieSceneFolderExt
             ("TargetFolder", (IntPtr)TargetFolder), 
             ("FolderToRemove", (IntPtr)FolderToRemove)
         ];
-        return ProcessEvent<bool>(GetFunction("RemoveChildFolder"),  @params);
+        return ProcessEvent<bool>(GetFunction("RemoveChildFolder"), @params);
     }
     public FName GetFolderName(UMovieSceneFolder* Folder)
     {
         Span<(string name, object value)> @params = [
             ("Folder", (IntPtr)Folder)
         ];
-        return ProcessEvent<FName>(GetFunction("GetFolderName"),  @params);
+        return ProcessEvent<FName>(GetFunction("GetFolderName"), @params);
     }
     public FColor GetFolderColor(UMovieSceneFolder* Folder)
     {
         Span<(string name, object value)> @params = [
             ("Folder", (IntPtr)Folder)
         ];
-        return ProcessEvent<FColor>(GetFunction("GetFolderColor"),  @params);
+        return ProcessEvent<FColor>(GetFunction("GetFolderColor"), @params);
     }
     public TArray<FSequencerBindingProxy> GetChildObjectBindings(UMovieSceneFolder* Folder)
     {
         Span<(string name, object value)> @params = [
             ("Folder", (IntPtr)Folder)
         ];
-        return ProcessEvent<TArray<FSequencerBindingProxy>>(GetFunction("GetChildObjectBindings"),  @params);
+        return ProcessEvent<TArray<FSequencerBindingProxy>>(GetFunction("GetChildObjectBindings"), @params);
     }
     public TArray<IntPtr> GetChildMasterTracks(UMovieSceneFolder* Folder)
     {
         Span<(string name, object value)> @params = [
             ("Folder", (IntPtr)Folder)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetChildMasterTracks"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetChildMasterTracks"), @params);
     }
     public TArray<IntPtr> GetChildFolders(UMovieSceneFolder* Folder)
     {
         Span<(string name, object value)> @params = [
             ("Folder", (IntPtr)Folder)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetChildFolders"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetChildFolders"), @params);
     }
     public bool AddChildObjectBinding(UMovieSceneFolder* Folder, FSequencerBindingProxy InObjectBinding)
     {
@@ -250,7 +245,7 @@ public unsafe class MovieSceneFolderExtensions : ObjectBase<UMovieSceneFolderExt
             ("Folder", (IntPtr)Folder), 
             ("InObjectBinding", InObjectBinding)
         ];
-        return ProcessEvent<bool>(GetFunction("AddChildObjectBinding"),  @params);
+        return ProcessEvent<bool>(GetFunction("AddChildObjectBinding"), @params);
     }
     public bool AddChildMasterTrack(UMovieSceneFolder* Folder, UMovieSceneTrack* InMasterTrack)
     {
@@ -258,7 +253,7 @@ public unsafe class MovieSceneFolderExtensions : ObjectBase<UMovieSceneFolderExt
             ("Folder", (IntPtr)Folder), 
             ("InMasterTrack", (IntPtr)InMasterTrack)
         ];
-        return ProcessEvent<bool>(GetFunction("AddChildMasterTrack"),  @params);
+        return ProcessEvent<bool>(GetFunction("AddChildMasterTrack"), @params);
     }
     public bool AddChildFolder(UMovieSceneFolder* TargetFolder, UMovieSceneFolder* FolderToAdd)
     {
@@ -266,13 +261,13 @@ public unsafe class MovieSceneFolderExtensions : ObjectBase<UMovieSceneFolderExt
             ("TargetFolder", (IntPtr)TargetFolder), 
             ("FolderToAdd", (IntPtr)FolderToAdd)
         ];
-        return ProcessEvent<bool>(GetFunction("AddChildFolder"),  @params);
+        return ProcessEvent<bool>(GetFunction("AddChildFolder"), @params);
     }
 }
 
 public unsafe class MovieScenePropertyTrackExtensions : ObjectBase<UMovieScenePropertyTrackExtensions>
 {
-
+    public MovieScenePropertyTrackExtensions(IntPtr pointer) : base(pointer) {}
     public void SetPropertyNameAndPath(UMovieScenePropertyTrack* Track, ref FName InPropertyName, FString InPropertyPath)
     {
         Span<(string name, object value)> @params = [
@@ -280,7 +275,7 @@ public unsafe class MovieScenePropertyTrackExtensions : ObjectBase<UMovieScenePr
             ("InPropertyName", InPropertyName), 
             ("InPropertyPath", InPropertyPath)
         ];
-        ProcessEvent(GetFunction("SetPropertyNameAndPath"),  @params);
+        ProcessEvent(GetFunction("SetPropertyNameAndPath"), @params);
     }
     public void SetObjectPropertyClass(UMovieSceneObjectPropertyTrack* Track, UClass* PropertyClass)
     {
@@ -288,51 +283,51 @@ public unsafe class MovieScenePropertyTrackExtensions : ObjectBase<UMovieScenePr
             ("Track", (IntPtr)Track), 
             ("PropertyClass", (IntPtr)PropertyClass)
         ];
-        ProcessEvent(GetFunction("SetObjectPropertyClass"),  @params);
+        ProcessEvent(GetFunction("SetObjectPropertyClass"), @params);
     }
     public FName GetUniqueTrackName(UMovieScenePropertyTrack* Track)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track)
         ];
-        return ProcessEvent<FName>(GetFunction("GetUniqueTrackName"),  @params);
+        return ProcessEvent<FName>(GetFunction("GetUniqueTrackName"), @params);
     }
     public FString GetPropertyPath(UMovieScenePropertyTrack* Track)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track)
         ];
-        return ProcessEvent<FString>(GetFunction("GetPropertyPath"),  @params);
+        return ProcessEvent<FString>(GetFunction("GetPropertyPath"), @params);
     }
     public FName GetPropertyName(UMovieScenePropertyTrack* Track)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track)
         ];
-        return ProcessEvent<FName>(GetFunction("GetPropertyName"),  @params);
+        return ProcessEvent<FName>(GetFunction("GetPropertyName"), @params);
     }
     public UClass* GetObjectPropertyClass(UMovieSceneObjectPropertyTrack* Track)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track)
         ];
-        return (UClass*)ProcessEvent<IntPtr>(GetFunction("GetObjectPropertyClass"),  @params);
+        return (UClass*)ProcessEvent<IntPtr>(GetFunction("GetObjectPropertyClass"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingKey : ObjectBase<UMovieSceneScriptingKey>
 {
-}
+    public MovieSceneScriptingKey(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class MovieSceneScriptingActorReferenceKey : ObjectBase<UMovieSceneScriptingActorReferenceKey>
 {
-
+    public MovieSceneScriptingActorReferenceKey(IntPtr pointer) : base(pointer) {}
     public void SetValue(ref FMovieSceneObjectBindingID InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetValue"),  @params);
+        ProcessEvent(GetFunction("SetValue"), @params);
     }
     public void SetTime(ref FFrameNumber NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -341,68 +336,68 @@ public unsafe class MovieSceneScriptingActorReferenceKey : ObjectBase<UMovieScen
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        ProcessEvent(GetFunction("SetTime"),  @params);
+        ProcessEvent(GetFunction("SetTime"), @params);
     }
     public FMovieSceneObjectBindingID GetValue()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<FMovieSceneObjectBindingID>(GetFunction("GetValue"),  @params);
+        return ProcessEvent<FMovieSceneObjectBindingID>(GetFunction("GetValue"), @params);
     }
     public FFrameTime GetTime(ESequenceTimeUnit TimeUnit)
     {
         Span<(string name, object value)> @params = [
             ("TimeUnit", TimeUnit)
         ];
-        return ProcessEvent<FFrameTime>(GetFunction("GetTime"),  @params);
+        return ProcessEvent<FFrameTime>(GetFunction("GetTime"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingChannel : ObjectBase<UMovieSceneScriptingChannel>
 {
-
+    public MovieSceneScriptingChannel(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class MovieSceneScriptingActorReferenceChannel : ObjectBase<UMovieSceneScriptingActorReferenceChannel>
 {
-
+    public MovieSceneScriptingActorReferenceChannel(IntPtr pointer) : base(pointer) {}
     public void SetDefault(FMovieSceneObjectBindingID InDefaultValue)
     {
         Span<(string name, object value)> @params = [
             ("InDefaultValue", InDefaultValue)
         ];
-        ProcessEvent(GetFunction("SetDefault"),  @params);
+        ProcessEvent(GetFunction("SetDefault"), @params);
     }
     public void RemoveKey(UMovieSceneScriptingKey* Key)
     {
         Span<(string name, object value)> @params = [
             ("Key", (IntPtr)Key)
         ];
-        ProcessEvent(GetFunction("RemoveKey"),  @params);
+        ProcessEvent(GetFunction("RemoveKey"), @params);
     }
     public void RemoveDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        ProcessEvent(GetFunction("RemoveDefault"),  @params);
+        ProcessEvent(GetFunction("RemoveDefault"), @params);
     }
     public bool HasDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<bool>(GetFunction("HasDefault"),  @params);
+        return ProcessEvent<bool>(GetFunction("HasDefault"), @params);
     }
     public TArray<IntPtr> GetKeys()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"), @params);
     }
     public FMovieSceneObjectBindingID GetDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<FMovieSceneObjectBindingID>(GetFunction("GetDefault"),  @params);
+        return ProcessEvent<FMovieSceneObjectBindingID>(GetFunction("GetDefault"), @params);
     }
     public UMovieSceneScriptingActorReferenceKey* AddKey(FFrameNumber InTime, FMovieSceneObjectBindingID NewValue, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -412,19 +407,19 @@ public unsafe class MovieSceneScriptingActorReferenceChannel : ObjectBase<UMovie
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        return (UMovieSceneScriptingActorReferenceKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"),  @params);
+        return (UMovieSceneScriptingActorReferenceKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingBoolKey : ObjectBase<UMovieSceneScriptingBoolKey>
 {
-
+    public MovieSceneScriptingBoolKey(IntPtr pointer) : base(pointer) {}
     public void SetValue(bool InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetValue"),  @params);
+        ProcessEvent(GetFunction("SetValue"), @params);
     }
     public void SetTime(ref FFrameNumber NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -433,74 +428,69 @@ public unsafe class MovieSceneScriptingBoolKey : ObjectBase<UMovieSceneScripting
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        ProcessEvent(GetFunction("SetTime"),  @params);
+        ProcessEvent(GetFunction("SetTime"), @params);
     }
     public bool GetValue()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<bool>(GetFunction("GetValue"),  @params);
+        return ProcessEvent<bool>(GetFunction("GetValue"), @params);
     }
     public FFrameTime GetTime(ESequenceTimeUnit TimeUnit)
     {
         Span<(string name, object value)> @params = [
             ("TimeUnit", TimeUnit)
         ];
-        return ProcessEvent<FFrameTime>(GetFunction("GetTime"),  @params);
+        return ProcessEvent<FFrameTime>(GetFunction("GetTime"), @params);
     }
-}
-
-public unsafe class SequencerScriptingRange : ObjectBase<FSequencerScriptingRange>
-{
-
 }
 
 public unsafe class MovieSceneScriptingBoolChannel : ObjectBase<UMovieSceneScriptingBoolChannel>
 {
-
+    public MovieSceneScriptingBoolChannel(IntPtr pointer) : base(pointer) {}
     public void SetDefault(bool InDefaultValue)
     {
         Span<(string name, object value)> @params = [
             ("InDefaultValue", InDefaultValue)
         ];
-        ProcessEvent(GetFunction("SetDefault"),  @params);
+        ProcessEvent(GetFunction("SetDefault"), @params);
     }
     public void RemoveKey(UMovieSceneScriptingKey* Key)
     {
         Span<(string name, object value)> @params = [
             ("Key", (IntPtr)Key)
         ];
-        ProcessEvent(GetFunction("RemoveKey"),  @params);
+        ProcessEvent(GetFunction("RemoveKey"), @params);
     }
     public void RemoveDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        ProcessEvent(GetFunction("RemoveDefault"),  @params);
+        ProcessEvent(GetFunction("RemoveDefault"), @params);
     }
     public bool HasDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<bool>(GetFunction("HasDefault"),  @params);
+        return ProcessEvent<bool>(GetFunction("HasDefault"), @params);
     }
     public int GetNumKeys()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<int>(GetFunction("GetNumKeys"),  @params);
+        return ProcessEvent<int>(GetFunction("GetNumKeys"), @params);
     }
     public TArray<IntPtr> GetKeys()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"), @params);
     }
     public bool GetDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<bool>(GetFunction("GetDefault"),  @params);
+        return ProcessEvent<bool>(GetFunction("GetDefault"), @params);
     }
     public TArray<bool> EvaluateKeys(FSequencerScriptingRange Range, FFrameRate FrameRate)
     {
@@ -508,13 +498,13 @@ public unsafe class MovieSceneScriptingBoolChannel : ObjectBase<UMovieSceneScrip
             ("Range", Range), 
             ("FrameRate", FrameRate)
         ];
-        return ProcessEvent<TArray<bool>>(GetFunction("EvaluateKeys"),  @params);
+        return ProcessEvent<TArray<bool>>(GetFunction("EvaluateKeys"), @params);
     }
     public FSequencerScriptingRange ComputeEffectiveRange()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<FSequencerScriptingRange>(GetFunction("ComputeEffectiveRange"),  @params);
+        return ProcessEvent<FSequencerScriptingRange>(GetFunction("ComputeEffectiveRange"), @params);
     }
     public UMovieSceneScriptingBoolKey* AddKey(ref FFrameNumber InTime, bool NewValue, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -524,19 +514,19 @@ public unsafe class MovieSceneScriptingBoolChannel : ObjectBase<UMovieSceneScrip
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        return (UMovieSceneScriptingBoolKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"),  @params);
+        return (UMovieSceneScriptingBoolKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingByteKey : ObjectBase<UMovieSceneScriptingByteKey>
 {
-
+    public MovieSceneScriptingByteKey(IntPtr pointer) : base(pointer) {}
     public void SetValue(byte InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetValue"),  @params);
+        ProcessEvent(GetFunction("SetValue"), @params);
     }
     public void SetTime(ref FFrameNumber NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -545,63 +535,63 @@ public unsafe class MovieSceneScriptingByteKey : ObjectBase<UMovieSceneScripting
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        ProcessEvent(GetFunction("SetTime"),  @params);
+        ProcessEvent(GetFunction("SetTime"), @params);
     }
     public byte GetValue()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<byte>(GetFunction("GetValue"),  @params);
+        return ProcessEvent<byte>(GetFunction("GetValue"), @params);
     }
     public FFrameTime GetTime(ESequenceTimeUnit TimeUnit)
     {
         Span<(string name, object value)> @params = [
             ("TimeUnit", TimeUnit)
         ];
-        return ProcessEvent<FFrameTime>(GetFunction("GetTime"),  @params);
+        return ProcessEvent<FFrameTime>(GetFunction("GetTime"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingByteChannel : ObjectBase<UMovieSceneScriptingByteChannel>
 {
-
+    public MovieSceneScriptingByteChannel(IntPtr pointer) : base(pointer) {}
     public void SetDefault(byte InDefaultValue)
     {
         Span<(string name, object value)> @params = [
             ("InDefaultValue", InDefaultValue)
         ];
-        ProcessEvent(GetFunction("SetDefault"),  @params);
+        ProcessEvent(GetFunction("SetDefault"), @params);
     }
     public void RemoveKey(UMovieSceneScriptingKey* Key)
     {
         Span<(string name, object value)> @params = [
             ("Key", (IntPtr)Key)
         ];
-        ProcessEvent(GetFunction("RemoveKey"),  @params);
+        ProcessEvent(GetFunction("RemoveKey"), @params);
     }
     public void RemoveDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        ProcessEvent(GetFunction("RemoveDefault"),  @params);
+        ProcessEvent(GetFunction("RemoveDefault"), @params);
     }
     public bool HasDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<bool>(GetFunction("HasDefault"),  @params);
+        return ProcessEvent<bool>(GetFunction("HasDefault"), @params);
     }
     public TArray<IntPtr> GetKeys()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"), @params);
     }
     public byte GetDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<byte>(GetFunction("GetDefault"),  @params);
+        return ProcessEvent<byte>(GetFunction("GetDefault"), @params);
     }
     public UMovieSceneScriptingByteKey* AddKey(ref FFrameNumber InTime, byte NewValue, float SubFrame, ESequenceTimeUnit TimeUnit, EMovieSceneKeyInterpolation InInterpolation)
     {
@@ -612,19 +602,19 @@ public unsafe class MovieSceneScriptingByteChannel : ObjectBase<UMovieSceneScrip
             ("TimeUnit", TimeUnit), 
             ("InInterpolation", InInterpolation)
         ];
-        return (UMovieSceneScriptingByteKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"),  @params);
+        return (UMovieSceneScriptingByteKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingEventKey : ObjectBase<UMovieSceneScriptingEventKey>
 {
-
+    public MovieSceneScriptingEventKey(IntPtr pointer) : base(pointer) {}
     public void SetValue(ref FMovieSceneEvent InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetValue"),  @params);
+        ProcessEvent(GetFunction("SetValue"), @params);
     }
     public void SetTime(ref FFrameNumber NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -633,38 +623,38 @@ public unsafe class MovieSceneScriptingEventKey : ObjectBase<UMovieSceneScriptin
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        ProcessEvent(GetFunction("SetTime"),  @params);
+        ProcessEvent(GetFunction("SetTime"), @params);
     }
     public FMovieSceneEvent GetValue()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<FMovieSceneEvent>(GetFunction("GetValue"),  @params);
+        return ProcessEvent<FMovieSceneEvent>(GetFunction("GetValue"), @params);
     }
     public FFrameTime GetTime(ESequenceTimeUnit TimeUnit)
     {
         Span<(string name, object value)> @params = [
             ("TimeUnit", TimeUnit)
         ];
-        return ProcessEvent<FFrameTime>(GetFunction("GetTime"),  @params);
+        return ProcessEvent<FFrameTime>(GetFunction("GetTime"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingEventChannel : ObjectBase<UMovieSceneScriptingEventChannel>
 {
-
+    public MovieSceneScriptingEventChannel(IntPtr pointer) : base(pointer) {}
     public void RemoveKey(UMovieSceneScriptingKey* Key)
     {
         Span<(string name, object value)> @params = [
             ("Key", (IntPtr)Key)
         ];
-        ProcessEvent(GetFunction("RemoveKey"),  @params);
+        ProcessEvent(GetFunction("RemoveKey"), @params);
     }
     public TArray<IntPtr> GetKeys()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"), @params);
     }
     public UMovieSceneScriptingEventKey* AddKey(ref FFrameNumber InTime, FMovieSceneEvent NewValue, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -674,19 +664,19 @@ public unsafe class MovieSceneScriptingEventChannel : ObjectBase<UMovieSceneScri
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        return (UMovieSceneScriptingEventKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"),  @params);
+        return (UMovieSceneScriptingEventKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingFloatKey : ObjectBase<UMovieSceneScriptingFloatKey>
 {
-
+    public MovieSceneScriptingFloatKey(IntPtr pointer) : base(pointer) {}
     public void SetValue(float InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetValue"),  @params);
+        ProcessEvent(GetFunction("SetValue"), @params);
     }
     public void SetTime(ref FFrameNumber NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -695,186 +685,186 @@ public unsafe class MovieSceneScriptingFloatKey : ObjectBase<UMovieSceneScriptin
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        ProcessEvent(GetFunction("SetTime"),  @params);
+        ProcessEvent(GetFunction("SetTime"), @params);
     }
     public void SetTangentWeightMode(ERichCurveTangentWeightMode InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetTangentWeightMode"),  @params);
+        ProcessEvent(GetFunction("SetTangentWeightMode"), @params);
     }
     public void SetTangentMode(ERichCurveTangentMode InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetTangentMode"),  @params);
+        ProcessEvent(GetFunction("SetTangentMode"), @params);
     }
     public void SetLeaveTangentWeight(float InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetLeaveTangentWeight"),  @params);
+        ProcessEvent(GetFunction("SetLeaveTangentWeight"), @params);
     }
     public void SetLeaveTangent(float InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetLeaveTangent"),  @params);
+        ProcessEvent(GetFunction("SetLeaveTangent"), @params);
     }
     public void SetInterpolationMode(ERichCurveInterpMode InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetInterpolationMode"),  @params);
+        ProcessEvent(GetFunction("SetInterpolationMode"), @params);
     }
     public void SetArriveTangentWeight(float InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetArriveTangentWeight"),  @params);
+        ProcessEvent(GetFunction("SetArriveTangentWeight"), @params);
     }
     public void SetArriveTangent(float InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetArriveTangent"),  @params);
+        ProcessEvent(GetFunction("SetArriveTangent"), @params);
     }
     public float GetValue()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<float>(GetFunction("GetValue"),  @params);
+        return ProcessEvent<float>(GetFunction("GetValue"), @params);
     }
     public FFrameTime GetTime(ESequenceTimeUnit TimeUnit)
     {
         Span<(string name, object value)> @params = [
             ("TimeUnit", TimeUnit)
         ];
-        return ProcessEvent<FFrameTime>(GetFunction("GetTime"),  @params);
+        return ProcessEvent<FFrameTime>(GetFunction("GetTime"), @params);
     }
     public ERichCurveTangentWeightMode GetTangentWeightMode()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<ERichCurveTangentWeightMode>(GetFunction("GetTangentWeightMode"),  @params);
+        return ProcessEvent<ERichCurveTangentWeightMode>(GetFunction("GetTangentWeightMode"), @params);
     }
     public ERichCurveTangentMode GetTangentMode()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<ERichCurveTangentMode>(GetFunction("GetTangentMode"),  @params);
+        return ProcessEvent<ERichCurveTangentMode>(GetFunction("GetTangentMode"), @params);
     }
     public float GetLeaveTangentWeight()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<float>(GetFunction("GetLeaveTangentWeight"),  @params);
+        return ProcessEvent<float>(GetFunction("GetLeaveTangentWeight"), @params);
     }
     public float GetLeaveTangent()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<float>(GetFunction("GetLeaveTangent"),  @params);
+        return ProcessEvent<float>(GetFunction("GetLeaveTangent"), @params);
     }
     public ERichCurveInterpMode GetInterpolationMode()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<ERichCurveInterpMode>(GetFunction("GetInterpolationMode"),  @params);
+        return ProcessEvent<ERichCurveInterpMode>(GetFunction("GetInterpolationMode"), @params);
     }
     public float GetArriveTangentWeight()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<float>(GetFunction("GetArriveTangentWeight"),  @params);
+        return ProcessEvent<float>(GetFunction("GetArriveTangentWeight"), @params);
     }
     public float GetArriveTangent()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<float>(GetFunction("GetArriveTangent"),  @params);
+        return ProcessEvent<float>(GetFunction("GetArriveTangent"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingFloatChannel : ObjectBase<UMovieSceneScriptingFloatChannel>
 {
-
+    public MovieSceneScriptingFloatChannel(IntPtr pointer) : base(pointer) {}
     public void SetPreInfinityExtrapolation(ERichCurveExtrapolation InExtrapolation)
     {
         Span<(string name, object value)> @params = [
             ("InExtrapolation", InExtrapolation)
         ];
-        ProcessEvent(GetFunction("SetPreInfinityExtrapolation"),  @params);
+        ProcessEvent(GetFunction("SetPreInfinityExtrapolation"), @params);
     }
     public void SetPostInfinityExtrapolation(ERichCurveExtrapolation InExtrapolation)
     {
         Span<(string name, object value)> @params = [
             ("InExtrapolation", InExtrapolation)
         ];
-        ProcessEvent(GetFunction("SetPostInfinityExtrapolation"),  @params);
+        ProcessEvent(GetFunction("SetPostInfinityExtrapolation"), @params);
     }
     public void SetDefault(float InDefaultValue)
     {
         Span<(string name, object value)> @params = [
             ("InDefaultValue", InDefaultValue)
         ];
-        ProcessEvent(GetFunction("SetDefault"),  @params);
+        ProcessEvent(GetFunction("SetDefault"), @params);
     }
     public void RemoveKey(UMovieSceneScriptingKey* Key)
     {
         Span<(string name, object value)> @params = [
             ("Key", (IntPtr)Key)
         ];
-        ProcessEvent(GetFunction("RemoveKey"),  @params);
+        ProcessEvent(GetFunction("RemoveKey"), @params);
     }
     public void RemoveDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        ProcessEvent(GetFunction("RemoveDefault"),  @params);
+        ProcessEvent(GetFunction("RemoveDefault"), @params);
     }
     public bool HasDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<bool>(GetFunction("HasDefault"),  @params);
+        return ProcessEvent<bool>(GetFunction("HasDefault"), @params);
     }
     public ERichCurveExtrapolation GetPreInfinityExtrapolation()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<ERichCurveExtrapolation>(GetFunction("GetPreInfinityExtrapolation"),  @params);
+        return ProcessEvent<ERichCurveExtrapolation>(GetFunction("GetPreInfinityExtrapolation"), @params);
     }
     public ERichCurveExtrapolation GetPostInfinityExtrapolation()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<ERichCurveExtrapolation>(GetFunction("GetPostInfinityExtrapolation"),  @params);
+        return ProcessEvent<ERichCurveExtrapolation>(GetFunction("GetPostInfinityExtrapolation"), @params);
     }
     public int GetNumKeys()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<int>(GetFunction("GetNumKeys"),  @params);
+        return ProcessEvent<int>(GetFunction("GetNumKeys"), @params);
     }
     public TArray<IntPtr> GetKeys()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"), @params);
     }
     public float GetDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<float>(GetFunction("GetDefault"),  @params);
+        return ProcessEvent<float>(GetFunction("GetDefault"), @params);
     }
     public TArray<float> EvaluateKeys(FSequencerScriptingRange Range, FFrameRate FrameRate)
     {
@@ -882,13 +872,13 @@ public unsafe class MovieSceneScriptingFloatChannel : ObjectBase<UMovieSceneScri
             ("Range", Range), 
             ("FrameRate", FrameRate)
         ];
-        return ProcessEvent<TArray<float>>(GetFunction("EvaluateKeys"),  @params);
+        return ProcessEvent<TArray<float>>(GetFunction("EvaluateKeys"), @params);
     }
     public FSequencerScriptingRange ComputeEffectiveRange()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<FSequencerScriptingRange>(GetFunction("ComputeEffectiveRange"),  @params);
+        return ProcessEvent<FSequencerScriptingRange>(GetFunction("ComputeEffectiveRange"), @params);
     }
     public UMovieSceneScriptingFloatKey* AddKey(ref FFrameNumber InTime, float NewValue, float SubFrame, ESequenceTimeUnit TimeUnit, EMovieSceneKeyInterpolation InInterpolation)
     {
@@ -899,19 +889,19 @@ public unsafe class MovieSceneScriptingFloatChannel : ObjectBase<UMovieSceneScri
             ("TimeUnit", TimeUnit), 
             ("InInterpolation", InInterpolation)
         ];
-        return (UMovieSceneScriptingFloatKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"),  @params);
+        return (UMovieSceneScriptingFloatKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingIntegerKey : ObjectBase<UMovieSceneScriptingIntegerKey>
 {
-
+    public MovieSceneScriptingIntegerKey(IntPtr pointer) : base(pointer) {}
     public void SetValue(int InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetValue"),  @params);
+        ProcessEvent(GetFunction("SetValue"), @params);
     }
     public void SetTime(ref FFrameNumber NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -920,63 +910,63 @@ public unsafe class MovieSceneScriptingIntegerKey : ObjectBase<UMovieSceneScript
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        ProcessEvent(GetFunction("SetTime"),  @params);
+        ProcessEvent(GetFunction("SetTime"), @params);
     }
     public int GetValue()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<int>(GetFunction("GetValue"),  @params);
+        return ProcessEvent<int>(GetFunction("GetValue"), @params);
     }
     public FFrameTime GetTime(ESequenceTimeUnit TimeUnit)
     {
         Span<(string name, object value)> @params = [
             ("TimeUnit", TimeUnit)
         ];
-        return ProcessEvent<FFrameTime>(GetFunction("GetTime"),  @params);
+        return ProcessEvent<FFrameTime>(GetFunction("GetTime"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingIntegerChannel : ObjectBase<UMovieSceneScriptingIntegerChannel>
 {
-
+    public MovieSceneScriptingIntegerChannel(IntPtr pointer) : base(pointer) {}
     public void SetDefault(int InDefaultValue)
     {
         Span<(string name, object value)> @params = [
             ("InDefaultValue", InDefaultValue)
         ];
-        ProcessEvent(GetFunction("SetDefault"),  @params);
+        ProcessEvent(GetFunction("SetDefault"), @params);
     }
     public void RemoveKey(UMovieSceneScriptingKey* Key)
     {
         Span<(string name, object value)> @params = [
             ("Key", (IntPtr)Key)
         ];
-        ProcessEvent(GetFunction("RemoveKey"),  @params);
+        ProcessEvent(GetFunction("RemoveKey"), @params);
     }
     public void RemoveDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        ProcessEvent(GetFunction("RemoveDefault"),  @params);
+        ProcessEvent(GetFunction("RemoveDefault"), @params);
     }
     public bool HasDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<bool>(GetFunction("HasDefault"),  @params);
+        return ProcessEvent<bool>(GetFunction("HasDefault"), @params);
     }
     public TArray<IntPtr> GetKeys()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"), @params);
     }
     public int GetDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<int>(GetFunction("GetDefault"),  @params);
+        return ProcessEvent<int>(GetFunction("GetDefault"), @params);
     }
     public UMovieSceneScriptingIntegerKey* AddKey(ref FFrameNumber InTime, int NewValue, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -986,19 +976,19 @@ public unsafe class MovieSceneScriptingIntegerChannel : ObjectBase<UMovieSceneSc
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        return (UMovieSceneScriptingIntegerKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"),  @params);
+        return (UMovieSceneScriptingIntegerKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingObjectPathKey : ObjectBase<UMovieSceneScriptingObjectPathKey>
 {
-
+    public MovieSceneScriptingObjectPathKey(IntPtr pointer) : base(pointer) {}
     public void SetValue(UObject* InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", (IntPtr)InNewValue)
         ];
-        ProcessEvent(GetFunction("SetValue"),  @params);
+        ProcessEvent(GetFunction("SetValue"), @params);
     }
     public void SetTime(ref FFrameNumber NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -1007,63 +997,63 @@ public unsafe class MovieSceneScriptingObjectPathKey : ObjectBase<UMovieSceneScr
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        ProcessEvent(GetFunction("SetTime"),  @params);
+        ProcessEvent(GetFunction("SetTime"), @params);
     }
     public UObject* GetValue()
     {
         Span<(string name, object value)> @params = [
         ];
-        return (UObject*)ProcessEvent<IntPtr>(GetFunction("GetValue"),  @params);
+        return (UObject*)ProcessEvent<IntPtr>(GetFunction("GetValue"), @params);
     }
     public FFrameTime GetTime(ESequenceTimeUnit TimeUnit)
     {
         Span<(string name, object value)> @params = [
             ("TimeUnit", TimeUnit)
         ];
-        return ProcessEvent<FFrameTime>(GetFunction("GetTime"),  @params);
+        return ProcessEvent<FFrameTime>(GetFunction("GetTime"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingObjectPathChannel : ObjectBase<UMovieSceneScriptingObjectPathChannel>
 {
-
+    public MovieSceneScriptingObjectPathChannel(IntPtr pointer) : base(pointer) {}
     public void SetDefault(UObject* InDefaultValue)
     {
         Span<(string name, object value)> @params = [
             ("InDefaultValue", (IntPtr)InDefaultValue)
         ];
-        ProcessEvent(GetFunction("SetDefault"),  @params);
+        ProcessEvent(GetFunction("SetDefault"), @params);
     }
     public void RemoveKey(UMovieSceneScriptingKey* Key)
     {
         Span<(string name, object value)> @params = [
             ("Key", (IntPtr)Key)
         ];
-        ProcessEvent(GetFunction("RemoveKey"),  @params);
+        ProcessEvent(GetFunction("RemoveKey"), @params);
     }
     public void RemoveDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        ProcessEvent(GetFunction("RemoveDefault"),  @params);
+        ProcessEvent(GetFunction("RemoveDefault"), @params);
     }
     public bool HasDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<bool>(GetFunction("HasDefault"),  @params);
+        return ProcessEvent<bool>(GetFunction("HasDefault"), @params);
     }
     public TArray<IntPtr> GetKeys()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"), @params);
     }
     public UObject* GetDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return (UObject*)ProcessEvent<IntPtr>(GetFunction("GetDefault"),  @params);
+        return (UObject*)ProcessEvent<IntPtr>(GetFunction("GetDefault"), @params);
     }
     public UMovieSceneScriptingObjectPathKey* AddKey(FFrameNumber InTime, UObject* NewValue, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -1073,19 +1063,19 @@ public unsafe class MovieSceneScriptingObjectPathChannel : ObjectBase<UMovieScen
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        return (UMovieSceneScriptingObjectPathKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"),  @params);
+        return (UMovieSceneScriptingObjectPathKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingStringKey : ObjectBase<UMovieSceneScriptingStringKey>
 {
-
+    public MovieSceneScriptingStringKey(IntPtr pointer) : base(pointer) {}
     public void SetValue(FString InNewValue)
     {
         Span<(string name, object value)> @params = [
             ("InNewValue", InNewValue)
         ];
-        ProcessEvent(GetFunction("SetValue"),  @params);
+        ProcessEvent(GetFunction("SetValue"), @params);
     }
     public void SetTime(ref FFrameNumber NewFrameNumber, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -1094,63 +1084,63 @@ public unsafe class MovieSceneScriptingStringKey : ObjectBase<UMovieSceneScripti
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        ProcessEvent(GetFunction("SetTime"),  @params);
+        ProcessEvent(GetFunction("SetTime"), @params);
     }
     public FString GetValue()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<FString>(GetFunction("GetValue"),  @params);
+        return ProcessEvent<FString>(GetFunction("GetValue"), @params);
     }
     public FFrameTime GetTime(ESequenceTimeUnit TimeUnit)
     {
         Span<(string name, object value)> @params = [
             ("TimeUnit", TimeUnit)
         ];
-        return ProcessEvent<FFrameTime>(GetFunction("GetTime"),  @params);
+        return ProcessEvent<FFrameTime>(GetFunction("GetTime"), @params);
     }
 }
 
 public unsafe class MovieSceneScriptingStringChannel : ObjectBase<UMovieSceneScriptingStringChannel>
 {
-
+    public MovieSceneScriptingStringChannel(IntPtr pointer) : base(pointer) {}
     public void SetDefault(FString InDefaultValue)
     {
         Span<(string name, object value)> @params = [
             ("InDefaultValue", InDefaultValue)
         ];
-        ProcessEvent(GetFunction("SetDefault"),  @params);
+        ProcessEvent(GetFunction("SetDefault"), @params);
     }
     public void RemoveKey(UMovieSceneScriptingKey* Key)
     {
         Span<(string name, object value)> @params = [
             ("Key", (IntPtr)Key)
         ];
-        ProcessEvent(GetFunction("RemoveKey"),  @params);
+        ProcessEvent(GetFunction("RemoveKey"), @params);
     }
     public void RemoveDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        ProcessEvent(GetFunction("RemoveDefault"),  @params);
+        ProcessEvent(GetFunction("RemoveDefault"), @params);
     }
     public bool HasDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<bool>(GetFunction("HasDefault"),  @params);
+        return ProcessEvent<bool>(GetFunction("HasDefault"), @params);
     }
     public TArray<IntPtr> GetKeys()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetKeys"), @params);
     }
     public FString GetDefault()
     {
         Span<(string name, object value)> @params = [
         ];
-        return ProcessEvent<FString>(GetFunction("GetDefault"),  @params);
+        return ProcessEvent<FString>(GetFunction("GetDefault"), @params);
     }
     public UMovieSceneScriptingStringKey* AddKey(ref FFrameNumber InTime, FString NewValue, float SubFrame, ESequenceTimeUnit TimeUnit)
     {
@@ -1160,20 +1150,20 @@ public unsafe class MovieSceneScriptingStringChannel : ObjectBase<UMovieSceneScr
             ("SubFrame", SubFrame), 
             ("TimeUnit", TimeUnit)
         ];
-        return (UMovieSceneScriptingStringKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"),  @params);
+        return (UMovieSceneScriptingStringKey*)ProcessEvent<IntPtr>(GetFunction("AddKey"), @params);
     }
 }
 
 public unsafe class MovieSceneSectionExtensions : ObjectBase<UMovieSceneSectionExtensions>
 {
-
+    public MovieSceneSectionExtensions(IntPtr pointer) : base(pointer) {}
     public void SetStartFrameSeconds(UMovieSceneSection* Section, float StartTime)
     {
         Span<(string name, object value)> @params = [
             ("Section", (IntPtr)Section), 
             ("StartTime", StartTime)
         ];
-        ProcessEvent(GetFunction("SetStartFrameSeconds"),  @params);
+        ProcessEvent(GetFunction("SetStartFrameSeconds"), @params);
     }
     public void SetStartFrameBounded(UMovieSceneSection* Section, bool bIsBounded)
     {
@@ -1181,7 +1171,7 @@ public unsafe class MovieSceneSectionExtensions : ObjectBase<UMovieSceneSectionE
             ("Section", (IntPtr)Section), 
             ("bIsBounded", bIsBounded)
         ];
-        ProcessEvent(GetFunction("SetStartFrameBounded"),  @params);
+        ProcessEvent(GetFunction("SetStartFrameBounded"), @params);
     }
     public void SetStartFrame(UMovieSceneSection* Section, int StartFrame)
     {
@@ -1189,7 +1179,7 @@ public unsafe class MovieSceneSectionExtensions : ObjectBase<UMovieSceneSectionE
             ("Section", (IntPtr)Section), 
             ("StartFrame", StartFrame)
         ];
-        ProcessEvent(GetFunction("SetStartFrame"),  @params);
+        ProcessEvent(GetFunction("SetStartFrame"), @params);
     }
     public void SetRangeSeconds(UMovieSceneSection* Section, float StartTime, float EndTime)
     {
@@ -1198,7 +1188,7 @@ public unsafe class MovieSceneSectionExtensions : ObjectBase<UMovieSceneSectionE
             ("StartTime", StartTime), 
             ("EndTime", EndTime)
         ];
-        ProcessEvent(GetFunction("SetRangeSeconds"),  @params);
+        ProcessEvent(GetFunction("SetRangeSeconds"), @params);
     }
     public void SetRange(UMovieSceneSection* Section, int StartFrame, int EndFrame)
     {
@@ -1207,7 +1197,7 @@ public unsafe class MovieSceneSectionExtensions : ObjectBase<UMovieSceneSectionE
             ("StartFrame", StartFrame), 
             ("EndFrame", EndFrame)
         ];
-        ProcessEvent(GetFunction("SetRange"),  @params);
+        ProcessEvent(GetFunction("SetRange"), @params);
     }
     public void SetEndFrameSeconds(UMovieSceneSection* Section, float EndTime)
     {
@@ -1215,7 +1205,7 @@ public unsafe class MovieSceneSectionExtensions : ObjectBase<UMovieSceneSectionE
             ("Section", (IntPtr)Section), 
             ("EndTime", EndTime)
         ];
-        ProcessEvent(GetFunction("SetEndFrameSeconds"),  @params);
+        ProcessEvent(GetFunction("SetEndFrameSeconds"), @params);
     }
     public void SetEndFrameBounded(UMovieSceneSection* Section, bool bIsBounded)
     {
@@ -1223,7 +1213,7 @@ public unsafe class MovieSceneSectionExtensions : ObjectBase<UMovieSceneSectionE
             ("Section", (IntPtr)Section), 
             ("bIsBounded", bIsBounded)
         ];
-        ProcessEvent(GetFunction("SetEndFrameBounded"),  @params);
+        ProcessEvent(GetFunction("SetEndFrameBounded"), @params);
     }
     public void SetEndFrame(UMovieSceneSection* Section, int EndFrame)
     {
@@ -1231,35 +1221,35 @@ public unsafe class MovieSceneSectionExtensions : ObjectBase<UMovieSceneSectionE
             ("Section", (IntPtr)Section), 
             ("EndFrame", EndFrame)
         ];
-        ProcessEvent(GetFunction("SetEndFrame"),  @params);
+        ProcessEvent(GetFunction("SetEndFrame"), @params);
     }
     public bool HasStartFrame(UMovieSceneSection* Section)
     {
         Span<(string name, object value)> @params = [
             ("Section", (IntPtr)Section)
         ];
-        return ProcessEvent<bool>(GetFunction("HasStartFrame"),  @params);
+        return ProcessEvent<bool>(GetFunction("HasStartFrame"), @params);
     }
     public bool HasEndFrame(UMovieSceneSection* Section)
     {
         Span<(string name, object value)> @params = [
             ("Section", (IntPtr)Section)
         ];
-        return ProcessEvent<bool>(GetFunction("HasEndFrame"),  @params);
+        return ProcessEvent<bool>(GetFunction("HasEndFrame"), @params);
     }
     public float GetStartFrameSeconds(UMovieSceneSection* Section)
     {
         Span<(string name, object value)> @params = [
             ("Section", (IntPtr)Section)
         ];
-        return ProcessEvent<float>(GetFunction("GetStartFrameSeconds"),  @params);
+        return ProcessEvent<float>(GetFunction("GetStartFrameSeconds"), @params);
     }
     public int GetStartFrame(UMovieSceneSection* Section)
     {
         Span<(string name, object value)> @params = [
             ("Section", (IntPtr)Section)
         ];
-        return ProcessEvent<int>(GetFunction("GetStartFrame"),  @params);
+        return ProcessEvent<int>(GetFunction("GetStartFrame"), @params);
     }
     public int GetParentSequenceFrame(UMovieSceneSubSection* Section, int InFrame, UMovieSceneSequence* ParentSequence)
     {
@@ -1268,28 +1258,28 @@ public unsafe class MovieSceneSectionExtensions : ObjectBase<UMovieSceneSectionE
             ("InFrame", InFrame), 
             ("ParentSequence", (IntPtr)ParentSequence)
         ];
-        return ProcessEvent<int>(GetFunction("GetParentSequenceFrame"),  @params);
+        return ProcessEvent<int>(GetFunction("GetParentSequenceFrame"), @params);
     }
     public float GetEndFrameSeconds(UMovieSceneSection* Section)
     {
         Span<(string name, object value)> @params = [
             ("Section", (IntPtr)Section)
         ];
-        return ProcessEvent<float>(GetFunction("GetEndFrameSeconds"),  @params);
+        return ProcessEvent<float>(GetFunction("GetEndFrameSeconds"), @params);
     }
     public int GetEndFrame(UMovieSceneSection* Section)
     {
         Span<(string name, object value)> @params = [
             ("Section", (IntPtr)Section)
         ];
-        return ProcessEvent<int>(GetFunction("GetEndFrame"),  @params);
+        return ProcessEvent<int>(GetFunction("GetEndFrame"), @params);
     }
     public TArray<IntPtr> GetChannels(UMovieSceneSection* Section)
     {
         Span<(string name, object value)> @params = [
             ("Section", (IntPtr)Section)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetChannels"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetChannels"), @params);
     }
     public TArray<IntPtr> FindChannelsByType(UMovieSceneSection* Section, TSubclassOf<UMovieSceneScriptingChannel> ChannelType)
     {
@@ -1297,19 +1287,19 @@ public unsafe class MovieSceneSectionExtensions : ObjectBase<UMovieSceneSectionE
             ("Section", (IntPtr)Section), 
             ("ChannelType", ChannelType)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("FindChannelsByType"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("FindChannelsByType"), @params);
     }
 }
 
 public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenceExtensions>
 {
-
+    public MovieSceneSequenceExtensions(IntPtr pointer) : base(pointer) {}
     public void SortMarkedFrames(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        ProcessEvent(GetFunction("SortMarkedFrames"),  @params);
+        ProcessEvent(GetFunction("SortMarkedFrames"), @params);
     }
     public void SetWorkRangeStart(UMovieSceneSequence* InSequence, float StartTimeInSeconds)
     {
@@ -1317,7 +1307,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("InSequence", (IntPtr)InSequence), 
             ("StartTimeInSeconds", StartTimeInSeconds)
         ];
-        ProcessEvent(GetFunction("SetWorkRangeStart"),  @params);
+        ProcessEvent(GetFunction("SetWorkRangeStart"), @params);
     }
     public void SetWorkRangeEnd(UMovieSceneSequence* InSequence, float EndTimeInSeconds)
     {
@@ -1325,7 +1315,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("InSequence", (IntPtr)InSequence), 
             ("EndTimeInSeconds", EndTimeInSeconds)
         ];
-        ProcessEvent(GetFunction("SetWorkRangeEnd"),  @params);
+        ProcessEvent(GetFunction("SetWorkRangeEnd"), @params);
     }
     public void SetViewRangeStart(UMovieSceneSequence* InSequence, float StartTimeInSeconds)
     {
@@ -1333,7 +1323,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("InSequence", (IntPtr)InSequence), 
             ("StartTimeInSeconds", StartTimeInSeconds)
         ];
-        ProcessEvent(GetFunction("SetViewRangeStart"),  @params);
+        ProcessEvent(GetFunction("SetViewRangeStart"), @params);
     }
     public void SetViewRangeEnd(UMovieSceneSequence* InSequence, float EndTimeInSeconds)
     {
@@ -1341,7 +1331,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("InSequence", (IntPtr)InSequence), 
             ("EndTimeInSeconds", EndTimeInSeconds)
         ];
-        ProcessEvent(GetFunction("SetViewRangeEnd"),  @params);
+        ProcessEvent(GetFunction("SetViewRangeEnd"), @params);
     }
     public void SetTickResolutionDirectly(UMovieSceneSequence* Sequence, FFrameRate TickResolution)
     {
@@ -1349,7 +1339,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("TickResolution", TickResolution)
         ];
-        ProcessEvent(GetFunction("SetTickResolutionDirectly"),  @params);
+        ProcessEvent(GetFunction("SetTickResolutionDirectly"), @params);
     }
     public void SetTickResolution(UMovieSceneSequence* Sequence, FFrameRate TickResolution)
     {
@@ -1357,7 +1347,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("TickResolution", TickResolution)
         ];
-        ProcessEvent(GetFunction("SetTickResolution"),  @params);
+        ProcessEvent(GetFunction("SetTickResolution"), @params);
     }
     public void SetReadOnly(UMovieSceneSequence* Sequence, bool bInReadOnly)
     {
@@ -1365,7 +1355,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("bInReadOnly", bInReadOnly)
         ];
-        ProcessEvent(GetFunction("SetReadOnly"),  @params);
+        ProcessEvent(GetFunction("SetReadOnly"), @params);
     }
     public void SetPlaybackStartSeconds(UMovieSceneSequence* Sequence, float StartTime)
     {
@@ -1373,7 +1363,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("StartTime", StartTime)
         ];
-        ProcessEvent(GetFunction("SetPlaybackStartSeconds"),  @params);
+        ProcessEvent(GetFunction("SetPlaybackStartSeconds"), @params);
     }
     public void SetPlaybackStart(UMovieSceneSequence* Sequence, int StartFrame)
     {
@@ -1381,7 +1371,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("StartFrame", StartFrame)
         ];
-        ProcessEvent(GetFunction("SetPlaybackStart"),  @params);
+        ProcessEvent(GetFunction("SetPlaybackStart"), @params);
     }
     public void SetPlaybackEndSeconds(UMovieSceneSequence* Sequence, float EndTime)
     {
@@ -1389,7 +1379,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("EndTime", EndTime)
         ];
-        ProcessEvent(GetFunction("SetPlaybackEndSeconds"),  @params);
+        ProcessEvent(GetFunction("SetPlaybackEndSeconds"), @params);
     }
     public void SetPlaybackEnd(UMovieSceneSequence* Sequence, int EndFrame)
     {
@@ -1397,7 +1387,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("EndFrame", EndFrame)
         ];
-        ProcessEvent(GetFunction("SetPlaybackEnd"),  @params);
+        ProcessEvent(GetFunction("SetPlaybackEnd"), @params);
     }
     public void SetMarkedFrame(UMovieSceneSequence* Sequence, int InMarkIndex, FFrameNumber InFrameNumber)
     {
@@ -1406,7 +1396,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("InMarkIndex", InMarkIndex), 
             ("InFrameNumber", InFrameNumber)
         ];
-        ProcessEvent(GetFunction("SetMarkedFrame"),  @params);
+        ProcessEvent(GetFunction("SetMarkedFrame"), @params);
     }
     public void SetEvaluationType(UMovieSceneSequence* InSequence, EMovieSceneEvaluationType InEvaluationType)
     {
@@ -1414,7 +1404,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("InSequence", (IntPtr)InSequence), 
             ("InEvaluationType", InEvaluationType)
         ];
-        ProcessEvent(GetFunction("SetEvaluationType"),  @params);
+        ProcessEvent(GetFunction("SetEvaluationType"), @params);
     }
     public void SetDisplayRate(UMovieSceneSequence* Sequence, FFrameRate DisplayRate)
     {
@@ -1422,7 +1412,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("DisplayRate", DisplayRate)
         ];
-        ProcessEvent(GetFunction("SetDisplayRate"),  @params);
+        ProcessEvent(GetFunction("SetDisplayRate"), @params);
     }
     public void SetClockSource(UMovieSceneSequence* InSequence, EUpdateClockSource InClockSource)
     {
@@ -1430,7 +1420,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("InSequence", (IntPtr)InSequence), 
             ("InClockSource", InClockSource)
         ];
-        ProcessEvent(GetFunction("SetClockSource"),  @params);
+        ProcessEvent(GetFunction("SetClockSource"), @params);
     }
     public FSequencerBindingProxy ResolveBindingID(UMovieSceneSequence* MasterSequence, FMovieSceneObjectBindingID InObjectBindingID)
     {
@@ -1438,7 +1428,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("MasterSequence", (IntPtr)MasterSequence), 
             ("InObjectBindingID", InObjectBindingID)
         ];
-        return ProcessEvent<FSequencerBindingProxy>(GetFunction("ResolveBindingID"),  @params);
+        return ProcessEvent<FSequencerBindingProxy>(GetFunction("ResolveBindingID"), @params);
     }
     public bool RemoveMasterTrack(UMovieSceneSequence* Sequence, UMovieSceneTrack* MasterTrack)
     {
@@ -1446,7 +1436,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("MasterTrack", (IntPtr)MasterTrack)
         ];
-        return ProcessEvent<bool>(GetFunction("RemoveMasterTrack"),  @params);
+        return ProcessEvent<bool>(GetFunction("RemoveMasterTrack"), @params);
     }
     public FSequencerScriptingRange MakeRangeSeconds(UMovieSceneSequence* Sequence, float StartTime, float Duration)
     {
@@ -1455,7 +1445,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("StartTime", StartTime), 
             ("Duration", Duration)
         ];
-        return ProcessEvent<FSequencerScriptingRange>(GetFunction("MakeRangeSeconds"),  @params);
+        return ProcessEvent<FSequencerScriptingRange>(GetFunction("MakeRangeSeconds"), @params);
     }
     public FSequencerScriptingRange MakeRange(UMovieSceneSequence* Sequence, int StartFrame, int Duration)
     {
@@ -1464,7 +1454,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("StartFrame", StartFrame), 
             ("Duration", Duration)
         ];
-        return ProcessEvent<FSequencerScriptingRange>(GetFunction("MakeRange"),  @params);
+        return ProcessEvent<FSequencerScriptingRange>(GetFunction("MakeRange"), @params);
     }
     public FMovieSceneObjectBindingID MakeBindingID(UMovieSceneSequence* MasterSequence, ref FSequencerBindingProxy InBinding, EMovieSceneObjectBindingSpace Space)
     {
@@ -1473,7 +1463,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("InBinding", InBinding), 
             ("Space", Space)
         ];
-        return ProcessEvent<FMovieSceneObjectBindingID>(GetFunction("MakeBindingID"),  @params);
+        return ProcessEvent<FMovieSceneObjectBindingID>(GetFunction("MakeBindingID"), @params);
     }
     public TArray<IntPtr> LocateBoundObjects(UMovieSceneSequence* Sequence, ref FSequencerBindingProxy InBinding, UObject* Context)
     {
@@ -1482,77 +1472,77 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("InBinding", InBinding), 
             ("Context", (IntPtr)Context)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("LocateBoundObjects"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("LocateBoundObjects"), @params);
     }
     public bool IsReadOnly(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<bool>(GetFunction("IsReadOnly"),  @params);
+        return ProcessEvent<bool>(GetFunction("IsReadOnly"), @params);
     }
     public float GetWorkRangeStart(UMovieSceneSequence* InSequence)
     {
         Span<(string name, object value)> @params = [
             ("InSequence", (IntPtr)InSequence)
         ];
-        return ProcessEvent<float>(GetFunction("GetWorkRangeStart"),  @params);
+        return ProcessEvent<float>(GetFunction("GetWorkRangeStart"), @params);
     }
     public float GetWorkRangeEnd(UMovieSceneSequence* InSequence)
     {
         Span<(string name, object value)> @params = [
             ("InSequence", (IntPtr)InSequence)
         ];
-        return ProcessEvent<float>(GetFunction("GetWorkRangeEnd"),  @params);
+        return ProcessEvent<float>(GetFunction("GetWorkRangeEnd"), @params);
     }
     public float GetViewRangeStart(UMovieSceneSequence* InSequence)
     {
         Span<(string name, object value)> @params = [
             ("InSequence", (IntPtr)InSequence)
         ];
-        return ProcessEvent<float>(GetFunction("GetViewRangeStart"),  @params);
+        return ProcessEvent<float>(GetFunction("GetViewRangeStart"), @params);
     }
     public float GetViewRangeEnd(UMovieSceneSequence* InSequence)
     {
         Span<(string name, object value)> @params = [
             ("InSequence", (IntPtr)InSequence)
         ];
-        return ProcessEvent<float>(GetFunction("GetViewRangeEnd"),  @params);
+        return ProcessEvent<float>(GetFunction("GetViewRangeEnd"), @params);
     }
     public FTimecode GetTimecodeSource(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<FTimecode>(GetFunction("GetTimecodeSource"),  @params);
+        return ProcessEvent<FTimecode>(GetFunction("GetTimecodeSource"), @params);
     }
     public FFrameRate GetTickResolution(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<FFrameRate>(GetFunction("GetTickResolution"),  @params);
+        return ProcessEvent<FFrameRate>(GetFunction("GetTickResolution"), @params);
     }
     public TArray<FSequencerBindingProxy> GetSpawnables(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<TArray<FSequencerBindingProxy>>(GetFunction("GetSpawnables"),  @params);
+        return ProcessEvent<TArray<FSequencerBindingProxy>>(GetFunction("GetSpawnables"), @params);
     }
     public TArray<IntPtr> GetRootFoldersInSequence(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetRootFoldersInSequence"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetRootFoldersInSequence"), @params);
     }
     public TArray<FSequencerBindingProxy> GetPossessables(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<TArray<FSequencerBindingProxy>>(GetFunction("GetPossessables"),  @params);
+        return ProcessEvent<TArray<FSequencerBindingProxy>>(GetFunction("GetPossessables"), @params);
     }
     public FMovieSceneObjectBindingID GetPortableBindingID(UMovieSceneSequence* MasterSequence, UMovieSceneSequence* DestinationSequence, ref FSequencerBindingProxy InBinding)
     {
@@ -1561,98 +1551,98 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("DestinationSequence", (IntPtr)DestinationSequence), 
             ("InBinding", InBinding)
         ];
-        return ProcessEvent<FMovieSceneObjectBindingID>(GetFunction("GetPortableBindingID"),  @params);
+        return ProcessEvent<FMovieSceneObjectBindingID>(GetFunction("GetPortableBindingID"), @params);
     }
     public float GetPlaybackStartSeconds(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<float>(GetFunction("GetPlaybackStartSeconds"),  @params);
+        return ProcessEvent<float>(GetFunction("GetPlaybackStartSeconds"), @params);
     }
     public int GetPlaybackStart(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<int>(GetFunction("GetPlaybackStart"),  @params);
+        return ProcessEvent<int>(GetFunction("GetPlaybackStart"), @params);
     }
     public FSequencerScriptingRange GetPlaybackRange(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<FSequencerScriptingRange>(GetFunction("GetPlaybackRange"),  @params);
+        return ProcessEvent<FSequencerScriptingRange>(GetFunction("GetPlaybackRange"), @params);
     }
     public float GetPlaybackEndSeconds(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<float>(GetFunction("GetPlaybackEndSeconds"),  @params);
+        return ProcessEvent<float>(GetFunction("GetPlaybackEndSeconds"), @params);
     }
     public int GetPlaybackEnd(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<int>(GetFunction("GetPlaybackEnd"),  @params);
+        return ProcessEvent<int>(GetFunction("GetPlaybackEnd"), @params);
     }
     public UMovieScene* GetMovieScene(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return (UMovieScene*)ProcessEvent<IntPtr>(GetFunction("GetMovieScene"),  @params);
+        return (UMovieScene*)ProcessEvent<IntPtr>(GetFunction("GetMovieScene"), @params);
     }
     public TArray<IntPtr> GetMasterTracks(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetMasterTracks"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetMasterTracks"), @params);
     }
     public TArray<FMovieSceneMarkedFrame> GetMarkedFrames(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<TArray<FMovieSceneMarkedFrame>>(GetFunction("GetMarkedFrames"),  @params);
+        return ProcessEvent<TArray<FMovieSceneMarkedFrame>>(GetFunction("GetMarkedFrames"), @params);
     }
     public EMovieSceneEvaluationType GetEvaluationType(UMovieSceneSequence* InSequence)
     {
         Span<(string name, object value)> @params = [
             ("InSequence", (IntPtr)InSequence)
         ];
-        return ProcessEvent<EMovieSceneEvaluationType>(GetFunction("GetEvaluationType"),  @params);
+        return ProcessEvent<EMovieSceneEvaluationType>(GetFunction("GetEvaluationType"), @params);
     }
     public FFrameRate GetDisplayRate(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<FFrameRate>(GetFunction("GetDisplayRate"),  @params);
+        return ProcessEvent<FFrameRate>(GetFunction("GetDisplayRate"), @params);
     }
     public EUpdateClockSource GetClockSource(UMovieSceneSequence* InSequence)
     {
         Span<(string name, object value)> @params = [
             ("InSequence", (IntPtr)InSequence)
         ];
-        return ProcessEvent<EUpdateClockSource>(GetFunction("GetClockSource"),  @params);
+        return ProcessEvent<EUpdateClockSource>(GetFunction("GetClockSource"), @params);
     }
     public TArray<FSequencerBindingProxy> GetBindings(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        return ProcessEvent<TArray<FSequencerBindingProxy>>(GetFunction("GetBindings"),  @params);
+        return ProcessEvent<TArray<FSequencerBindingProxy>>(GetFunction("GetBindings"), @params);
     }
     public FMovieSceneObjectBindingID GetBindingID(ref FSequencerBindingProxy InBinding)
     {
         Span<(string name, object value)> @params = [
             ("InBinding", InBinding)
         ];
-        return ProcessEvent<FMovieSceneObjectBindingID>(GetFunction("GetBindingID"),  @params);
+        return ProcessEvent<FMovieSceneObjectBindingID>(GetFunction("GetBindingID"), @params);
     }
     public int FindNextMarkedFrame(UMovieSceneSequence* Sequence, FFrameNumber InFrameNumber, bool bForward)
     {
@@ -1661,7 +1651,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("InFrameNumber", InFrameNumber), 
             ("bForward", bForward)
         ];
-        return ProcessEvent<int>(GetFunction("FindNextMarkedFrame"),  @params);
+        return ProcessEvent<int>(GetFunction("FindNextMarkedFrame"), @params);
     }
     public TArray<IntPtr> FindMasterTracksByType(UMovieSceneSequence* Sequence, TSubclassOf<UMovieSceneTrack> TrackType)
     {
@@ -1669,7 +1659,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("TrackType", TrackType)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("FindMasterTracksByType"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("FindMasterTracksByType"), @params);
     }
     public TArray<IntPtr> FindMasterTracksByExactType(UMovieSceneSequence* Sequence, TSubclassOf<UMovieSceneTrack> TrackType)
     {
@@ -1677,7 +1667,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("TrackType", TrackType)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("FindMasterTracksByExactType"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("FindMasterTracksByExactType"), @params);
     }
     public int FindMarkedFrameByLabel(UMovieSceneSequence* Sequence, FString InLabel)
     {
@@ -1685,7 +1675,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("InLabel", InLabel)
         ];
-        return ProcessEvent<int>(GetFunction("FindMarkedFrameByLabel"),  @params);
+        return ProcessEvent<int>(GetFunction("FindMarkedFrameByLabel"), @params);
     }
     public int FindMarkedFrameByFrameNumber(UMovieSceneSequence* Sequence, FFrameNumber InFrameNumber)
     {
@@ -1693,7 +1683,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("InFrameNumber", InFrameNumber)
         ];
-        return ProcessEvent<int>(GetFunction("FindMarkedFrameByFrameNumber"),  @params);
+        return ProcessEvent<int>(GetFunction("FindMarkedFrameByFrameNumber"), @params);
     }
     public FSequencerBindingProxy FindBindingByName(UMovieSceneSequence* Sequence, FString Name)
     {
@@ -1701,7 +1691,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("Name", Name)
         ];
-        return ProcessEvent<FSequencerBindingProxy>(GetFunction("FindBindingByName"),  @params);
+        return ProcessEvent<FSequencerBindingProxy>(GetFunction("FindBindingByName"), @params);
     }
     public FSequencerBindingProxy FindBindingById(UMovieSceneSequence* Sequence, FGuid BindingID)
     {
@@ -1709,14 +1699,14 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("BindingID", BindingID)
         ];
-        return ProcessEvent<FSequencerBindingProxy>(GetFunction("FindBindingById"),  @params);
+        return ProcessEvent<FSequencerBindingProxy>(GetFunction("FindBindingById"), @params);
     }
     public void DeleteMarkedFrames(UMovieSceneSequence* Sequence)
     {
         Span<(string name, object value)> @params = [
             ("Sequence", (IntPtr)Sequence)
         ];
-        ProcessEvent(GetFunction("DeleteMarkedFrames"),  @params);
+        ProcessEvent(GetFunction("DeleteMarkedFrames"), @params);
     }
     public void DeleteMarkedFrame(UMovieSceneSequence* Sequence, int DeleteIndex)
     {
@@ -1724,7 +1714,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("DeleteIndex", DeleteIndex)
         ];
-        ProcessEvent(GetFunction("DeleteMarkedFrame"),  @params);
+        ProcessEvent(GetFunction("DeleteMarkedFrame"), @params);
     }
     public FSequencerBindingProxy AddSpawnableFromInstance(UMovieSceneSequence* Sequence, UObject* ObjectToSpawn)
     {
@@ -1732,7 +1722,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("ObjectToSpawn", (IntPtr)ObjectToSpawn)
         ];
-        return ProcessEvent<FSequencerBindingProxy>(GetFunction("AddSpawnableFromInstance"),  @params);
+        return ProcessEvent<FSequencerBindingProxy>(GetFunction("AddSpawnableFromInstance"), @params);
     }
     public FSequencerBindingProxy AddSpawnableFromClass(UMovieSceneSequence* Sequence, UClass* ClassToSpawn)
     {
@@ -1740,7 +1730,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("ClassToSpawn", (IntPtr)ClassToSpawn)
         ];
-        return ProcessEvent<FSequencerBindingProxy>(GetFunction("AddSpawnableFromClass"),  @params);
+        return ProcessEvent<FSequencerBindingProxy>(GetFunction("AddSpawnableFromClass"), @params);
     }
     public UMovieSceneFolder* AddRootFolderToSequence(UMovieSceneSequence* Sequence, FString NewFolderName)
     {
@@ -1748,7 +1738,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("NewFolderName", NewFolderName)
         ];
-        return (UMovieSceneFolder*)ProcessEvent<IntPtr>(GetFunction("AddRootFolderToSequence"),  @params);
+        return (UMovieSceneFolder*)ProcessEvent<IntPtr>(GetFunction("AddRootFolderToSequence"), @params);
     }
     public FSequencerBindingProxy AddPossessable(UMovieSceneSequence* Sequence, UObject* ObjectToPossess)
     {
@@ -1756,7 +1746,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("ObjectToPossess", (IntPtr)ObjectToPossess)
         ];
-        return ProcessEvent<FSequencerBindingProxy>(GetFunction("AddPossessable"),  @params);
+        return ProcessEvent<FSequencerBindingProxy>(GetFunction("AddPossessable"), @params);
     }
     public UMovieSceneTrack* AddMasterTrack(UMovieSceneSequence* Sequence, TSubclassOf<UMovieSceneTrack> TrackType)
     {
@@ -1764,7 +1754,7 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("TrackType", TrackType)
         ];
-        return (UMovieSceneTrack*)ProcessEvent<IntPtr>(GetFunction("AddMasterTrack"),  @params);
+        return (UMovieSceneTrack*)ProcessEvent<IntPtr>(GetFunction("AddMasterTrack"), @params);
     }
     public int AddMarkedFrame(UMovieSceneSequence* Sequence, ref FMovieSceneMarkedFrame InMarkedFrame)
     {
@@ -1772,20 +1762,20 @@ public unsafe class MovieSceneSequenceExtensions : ObjectBase<UMovieSceneSequenc
             ("Sequence", (IntPtr)Sequence), 
             ("InMarkedFrame", InMarkedFrame)
         ];
-        return ProcessEvent<int>(GetFunction("AddMarkedFrame"),  @params);
+        return ProcessEvent<int>(GetFunction("AddMarkedFrame"), @params);
     }
 }
 
 public unsafe class MovieSceneTrackExtensions : ObjectBase<UMovieSceneTrackExtensions>
 {
-
+    public MovieSceneTrackExtensions(IntPtr pointer) : base(pointer) {}
     public void SetSortingOrder(UMovieSceneTrack* Track, int SortingOrder)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track), 
             ("SortingOrder", SortingOrder)
         ];
-        ProcessEvent(GetFunction("SetSortingOrder"),  @params);
+        ProcessEvent(GetFunction("SetSortingOrder"), @params);
     }
     public void SetSectionToKey(UMovieSceneTrack* Track, UMovieSceneSection* Section)
     {
@@ -1793,7 +1783,7 @@ public unsafe class MovieSceneTrackExtensions : ObjectBase<UMovieSceneTrackExten
             ("Track", (IntPtr)Track), 
             ("Section", (IntPtr)Section)
         ];
-        ProcessEvent(GetFunction("SetSectionToKey"),  @params);
+        ProcessEvent(GetFunction("SetSectionToKey"), @params);
     }
     public void SetDisplayName(UMovieSceneTrack* Track, ref FText InName)
     {
@@ -1801,7 +1791,7 @@ public unsafe class MovieSceneTrackExtensions : ObjectBase<UMovieSceneTrackExten
             ("Track", (IntPtr)Track), 
             ("InName", InName)
         ];
-        ProcessEvent(GetFunction("SetDisplayName"),  @params);
+        ProcessEvent(GetFunction("SetDisplayName"), @params);
     }
     public void SetColorTint(UMovieSceneTrack* Track, ref FColor ColorTint)
     {
@@ -1809,7 +1799,7 @@ public unsafe class MovieSceneTrackExtensions : ObjectBase<UMovieSceneTrackExten
             ("Track", (IntPtr)Track), 
             ("ColorTint", ColorTint)
         ];
-        ProcessEvent(GetFunction("SetColorTint"),  @params);
+        ProcessEvent(GetFunction("SetColorTint"), @params);
     }
     public void RemoveSection(UMovieSceneTrack* Track, UMovieSceneSection* Section)
     {
@@ -1817,82 +1807,82 @@ public unsafe class MovieSceneTrackExtensions : ObjectBase<UMovieSceneTrackExten
             ("Track", (IntPtr)Track), 
             ("Section", (IntPtr)Section)
         ];
-        ProcessEvent(GetFunction("RemoveSection"),  @params);
+        ProcessEvent(GetFunction("RemoveSection"), @params);
     }
     public int GetSortingOrder(UMovieSceneTrack* Track)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track)
         ];
-        return ProcessEvent<int>(GetFunction("GetSortingOrder"),  @params);
+        return ProcessEvent<int>(GetFunction("GetSortingOrder"), @params);
     }
     public UMovieSceneSection* GetSectionToKey(UMovieSceneTrack* Track)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track)
         ];
-        return (UMovieSceneSection*)ProcessEvent<IntPtr>(GetFunction("GetSectionToKey"),  @params);
+        return (UMovieSceneSection*)ProcessEvent<IntPtr>(GetFunction("GetSectionToKey"), @params);
     }
     public TArray<IntPtr> GetSections(UMovieSceneTrack* Track)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track)
         ];
-        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetSections"),  @params);
+        return ProcessEvent<TArray<IntPtr>>(GetFunction("GetSections"), @params);
     }
     public FText GetDisplayName(UMovieSceneTrack* Track)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track)
         ];
-        return ProcessEvent<FText>(GetFunction("GetDisplayName"),  @params);
+        return ProcessEvent<FText>(GetFunction("GetDisplayName"), @params);
     }
     public FColor GetColorTint(UMovieSceneTrack* Track)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track)
         ];
-        return ProcessEvent<FColor>(GetFunction("GetColorTint"),  @params);
+        return ProcessEvent<FColor>(GetFunction("GetColorTint"), @params);
     }
     public UMovieSceneSection* AddSection(UMovieSceneTrack* Track)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track)
         ];
-        return (UMovieSceneSection*)ProcessEvent<IntPtr>(GetFunction("AddSection"),  @params);
+        return (UMovieSceneSection*)ProcessEvent<IntPtr>(GetFunction("AddSection"), @params);
     }
 }
 
 public unsafe class MovieSceneVectorTrackExtensions : ObjectBase<UMovieSceneVectorTrackExtensions>
 {
-
+    public MovieSceneVectorTrackExtensions(IntPtr pointer) : base(pointer) {}
     public void SetNumChannelsUsed(UMovieSceneVectorTrack* Track, int InNumChannelsUsed)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track), 
             ("InNumChannelsUsed", InNumChannelsUsed)
         ];
-        ProcessEvent(GetFunction("SetNumChannelsUsed"),  @params);
+        ProcessEvent(GetFunction("SetNumChannelsUsed"), @params);
     }
     public int GetNumChannelsUsed(UMovieSceneVectorTrack* Track)
     {
         Span<(string name, object value)> @params = [
             ("Track", (IntPtr)Track)
         ];
-        return ProcessEvent<int>(GetFunction("GetNumChannelsUsed"),  @params);
+        return ProcessEvent<int>(GetFunction("GetNumChannelsUsed"), @params);
     }
 }
 
 public unsafe class SequencerScriptingRangeExtensions : ObjectBase<USequencerScriptingRangeExtensions>
 {
-
+    public SequencerScriptingRangeExtensions(IntPtr pointer) : base(pointer) {}
     public void SetStartSeconds(ref FSequencerScriptingRange Range, float Start)
     {
         Span<(string name, object value)> @params = [
             ("Range", Range), 
             ("Start", Start)
         ];
-        ProcessEvent(GetFunction("SetStartSeconds"),  @params);
+        ProcessEvent(GetFunction("SetStartSeconds"), @params);
     }
     public void SetStartFrame(ref FSequencerScriptingRange Range, int Start)
     {
@@ -1900,7 +1890,7 @@ public unsafe class SequencerScriptingRangeExtensions : ObjectBase<USequencerScr
             ("Range", Range), 
             ("Start", Start)
         ];
-        ProcessEvent(GetFunction("SetStartFrame"),  @params);
+        ProcessEvent(GetFunction("SetStartFrame"), @params);
     }
     public void SetEndSeconds(ref FSequencerScriptingRange Range, float End)
     {
@@ -1908,7 +1898,7 @@ public unsafe class SequencerScriptingRangeExtensions : ObjectBase<USequencerScr
             ("Range", Range), 
             ("End", End)
         ];
-        ProcessEvent(GetFunction("SetEndSeconds"),  @params);
+        ProcessEvent(GetFunction("SetEndSeconds"), @params);
     }
     public void SetEndFrame(ref FSequencerScriptingRange Range, int End)
     {
@@ -1916,63 +1906,63 @@ public unsafe class SequencerScriptingRangeExtensions : ObjectBase<USequencerScr
             ("Range", Range), 
             ("End", End)
         ];
-        ProcessEvent(GetFunction("SetEndFrame"),  @params);
+        ProcessEvent(GetFunction("SetEndFrame"), @params);
     }
     public void RemoveStart(ref FSequencerScriptingRange Range)
     {
         Span<(string name, object value)> @params = [
             ("Range", Range)
         ];
-        ProcessEvent(GetFunction("RemoveStart"),  @params);
+        ProcessEvent(GetFunction("RemoveStart"), @params);
     }
     public void RemoveEnd(ref FSequencerScriptingRange Range)
     {
         Span<(string name, object value)> @params = [
             ("Range", Range)
         ];
-        ProcessEvent(GetFunction("RemoveEnd"),  @params);
+        ProcessEvent(GetFunction("RemoveEnd"), @params);
     }
     public bool HasStart(ref FSequencerScriptingRange Range)
     {
         Span<(string name, object value)> @params = [
             ("Range", Range)
         ];
-        return ProcessEvent<bool>(GetFunction("HasStart"),  @params);
+        return ProcessEvent<bool>(GetFunction("HasStart"), @params);
     }
     public bool HasEnd(ref FSequencerScriptingRange Range)
     {
         Span<(string name, object value)> @params = [
             ("Range", Range)
         ];
-        return ProcessEvent<bool>(GetFunction("HasEnd"),  @params);
+        return ProcessEvent<bool>(GetFunction("HasEnd"), @params);
     }
     public float GetStartSeconds(ref FSequencerScriptingRange Range)
     {
         Span<(string name, object value)> @params = [
             ("Range", Range)
         ];
-        return ProcessEvent<float>(GetFunction("GetStartSeconds"),  @params);
+        return ProcessEvent<float>(GetFunction("GetStartSeconds"), @params);
     }
     public int GetStartFrame(ref FSequencerScriptingRange Range)
     {
         Span<(string name, object value)> @params = [
             ("Range", Range)
         ];
-        return ProcessEvent<int>(GetFunction("GetStartFrame"),  @params);
+        return ProcessEvent<int>(GetFunction("GetStartFrame"), @params);
     }
     public float GetEndSeconds(ref FSequencerScriptingRange Range)
     {
         Span<(string name, object value)> @params = [
             ("Range", Range)
         ];
-        return ProcessEvent<float>(GetFunction("GetEndSeconds"),  @params);
+        return ProcessEvent<float>(GetFunction("GetEndSeconds"), @params);
     }
     public int GetEndFrame(ref FSequencerScriptingRange Range)
     {
         Span<(string name, object value)> @params = [
             ("Range", Range)
         ];
-        return ProcessEvent<int>(GetFunction("GetEndFrame"),  @params);
+        return ProcessEvent<int>(GetFunction("GetEndFrame"), @params);
     }
 }
 

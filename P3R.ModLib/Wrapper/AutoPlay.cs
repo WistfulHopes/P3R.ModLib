@@ -5,142 +5,90 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class APCommandBase : ObjectBase<UAPCommandBase>
 {
-}
+    public APCommandBase(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class APCmdEcho : ObjectBase<UAPCmdEcho>
 {
-}
+    public APCmdEcho(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class APCmdEndRecord : ObjectBase<UAPCmdEndRecord>
 {
-
+    public APCmdEndRecord(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class APCmdNop : ObjectBase<UAPCmdNop>
 {
-}
+    public APCmdNop(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class APCmdRecordRequest : ObjectBase<UAPCmdRecordRequest>
 {
-}
+    public APCmdRecordRequest(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class APCmdScreenShot : ObjectBase<UAPCmdScreenShot>
 {
-}
+    public APCmdScreenShot(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class APCmdSlowMotion : ObjectBase<UAPCmdSlowMotion>
 {
-}
+    public APCmdSlowMotion(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class APCmdStartRecord : ObjectBase<UAPCmdStartRecord>
 {
-
+    public APCmdStartRecord(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class APCmdWaitForNextCommand : ObjectBase<UAPCmdWaitForNextCommand>
 {
-
+    public APCmdWaitForNextCommand(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class AutoPlayCommandLogger : ObjectBase<UAutoPlayCommandLogger>
 {
-}
+    public AutoPlayCommandLogger(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class AutoPlayCommandManager : ObjectBase<UAutoPlayCommandManager>
 {
-
+    public AutoPlayCommandManager(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class AutoPlayCommandServer : ObjectBase<UAutoPlayCommandServer>
 {
-
+    public AutoPlayCommandServer(IntPtr pointer) : base(pointer) {}
     public void OnReceivedAsString(UAtlSocketBase* Socket, FString str)
     {
         Span<(string name, object value)> @params = [
             ("Socket", (IntPtr)Socket), 
             ("str", str)
         ];
-        ProcessEvent(GetFunction("OnReceivedAsString"),  @params);
+        ProcessEvent(GetFunction("OnReceivedAsString"), @params);
     }
     public void OnDisconnected(UAtlSocketBase* Socket)
     {
         Span<(string name, object value)> @params = [
             ("Socket", (IntPtr)Socket)
         ];
-        ProcessEvent(GetFunction("OnDisconnected"),  @params);
+        ProcessEvent(GetFunction("OnDisconnected"), @params);
     }
     public void OnConnected(UAtlSocketBase* Socket)
     {
         Span<(string name, object value)> @params = [
             ("Socket", (IntPtr)Socket)
         ];
-        ProcessEvent(GetFunction("OnConnected"),  @params);
+        ProcessEvent(GetFunction("OnConnected"), @params);
     }
 }
 
 public unsafe class AutoPlayCommandWorker : ObjectBase<UAutoPlayCommandWorker>
 {
-
+    public AutoPlayCommandWorker(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class AutoPlayEventObject : ObjectBase<UAutoPlayEventObject>
 {
-}
+    public AutoPlayEventObject(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class AutoPlayGameInstanceSubsystem : ObjectBase<UAutoPlayGameInstanceSubsystem>
 {
-
-}
-
-public unsafe class APCommandParam : ObjectBase<FAPCommandParam>
-{
-
-}
-
-public unsafe class APEndRecordParam : ObjectBase<FAPEndRecordParam>
-{
-}
-
-public unsafe class APStartRecordParam : ObjectBase<FAPStartRecordParam>
-{
-}
-
-public unsafe class APSlowMotionParam : ObjectBase<FAPSlowMotionParam>
-{
-
-}
-
-public unsafe class APScreenShotParam : ObjectBase<FAPScreenShotParam>
-{
-
-}
-
-public unsafe class APWaitForNextCommandParam : ObjectBase<FAPWaitForNextCommandParam>
-{
-
-}
-
-public unsafe class APNopParam : ObjectBase<FAPNopParam>
-{
-}
-
-public unsafe class APEchoParam : ObjectBase<FAPEchoParam>
-{
-
-}
-
-public unsafe class APCommandLog : ObjectBase<FAPCommandLog>
-{
-
-}
-
-public unsafe class APCommandReserve : ObjectBase<FAPCommandReserve>
-{
-
-}
-
-public unsafe class APCommandInstance : ObjectBase<FAPCommandInstance>
-{
-
+    public AutoPlayGameInstanceSubsystem(IntPtr pointer) : base(pointer) {}
 }
 

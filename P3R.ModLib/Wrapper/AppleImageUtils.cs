@@ -5,7 +5,7 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class AppleImageUtilsBaseAsyncTaskBlueprintProxy : ObjectBase<UAppleImageUtilsBaseAsyncTaskBlueprintProxy>
 {
-
+    public AppleImageUtilsBaseAsyncTaskBlueprintProxy(IntPtr pointer) : base(pointer) {}
     public UAppleImageUtilsBaseAsyncTaskBlueprintProxy* CreateProxyObjectForConvertToTIFF(UTexture* SourceImage, bool bWantColor, bool bUseGpu, float Scale, ETextureRotationDirection Rotate)
     {
         Span<(string name, object value)> @params = [
@@ -15,7 +15,7 @@ public unsafe class AppleImageUtilsBaseAsyncTaskBlueprintProxy : ObjectBase<UApp
             ("Scale", Scale), 
             ("Rotate", Rotate)
         ];
-        return (UAppleImageUtilsBaseAsyncTaskBlueprintProxy*)ProcessEvent<IntPtr>(GetFunction("CreateProxyObjectForConvertToTIFF"),  @params);
+        return (UAppleImageUtilsBaseAsyncTaskBlueprintProxy*)ProcessEvent<IntPtr>(GetFunction("CreateProxyObjectForConvertToTIFF"), @params);
     }
     public UAppleImageUtilsBaseAsyncTaskBlueprintProxy* CreateProxyObjectForConvertToPNG(UTexture* SourceImage, bool bWantColor, bool bUseGpu, float Scale, ETextureRotationDirection Rotate)
     {
@@ -26,7 +26,7 @@ public unsafe class AppleImageUtilsBaseAsyncTaskBlueprintProxy : ObjectBase<UApp
             ("Scale", Scale), 
             ("Rotate", Rotate)
         ];
-        return (UAppleImageUtilsBaseAsyncTaskBlueprintProxy*)ProcessEvent<IntPtr>(GetFunction("CreateProxyObjectForConvertToPNG"),  @params);
+        return (UAppleImageUtilsBaseAsyncTaskBlueprintProxy*)ProcessEvent<IntPtr>(GetFunction("CreateProxyObjectForConvertToPNG"), @params);
     }
     public UAppleImageUtilsBaseAsyncTaskBlueprintProxy* CreateProxyObjectForConvertToJPEG(UTexture* SourceImage, int Quality, bool bWantColor, bool bUseGpu, float Scale, ETextureRotationDirection Rotate)
     {
@@ -38,7 +38,7 @@ public unsafe class AppleImageUtilsBaseAsyncTaskBlueprintProxy : ObjectBase<UApp
             ("Scale", Scale), 
             ("Rotate", Rotate)
         ];
-        return (UAppleImageUtilsBaseAsyncTaskBlueprintProxy*)ProcessEvent<IntPtr>(GetFunction("CreateProxyObjectForConvertToJPEG"),  @params);
+        return (UAppleImageUtilsBaseAsyncTaskBlueprintProxy*)ProcessEvent<IntPtr>(GetFunction("CreateProxyObjectForConvertToJPEG"), @params);
     }
     public UAppleImageUtilsBaseAsyncTaskBlueprintProxy* CreateProxyObjectForConvertToHEIF(UTexture* SourceImage, int Quality, bool bWantColor, bool bUseGpu, float Scale, ETextureRotationDirection Rotate)
     {
@@ -50,16 +50,11 @@ public unsafe class AppleImageUtilsBaseAsyncTaskBlueprintProxy : ObjectBase<UApp
             ("Scale", Scale), 
             ("Rotate", Rotate)
         ];
-        return (UAppleImageUtilsBaseAsyncTaskBlueprintProxy*)ProcessEvent<IntPtr>(GetFunction("CreateProxyObjectForConvertToHEIF"),  @params);
+        return (UAppleImageUtilsBaseAsyncTaskBlueprintProxy*)ProcessEvent<IntPtr>(GetFunction("CreateProxyObjectForConvertToHEIF"), @params);
     }
 }
 
 public unsafe class AppleImageInterface : ObjectBase<IAppleImageInterface>
 {
-}
-
-public unsafe class AppleImageUtilsImageConversionResult : ObjectBase<FAppleImageUtilsImageConversionResult>
-{
-
-}
+    public AppleImageInterface(IntPtr pointer) : base(pointer) {}}
 

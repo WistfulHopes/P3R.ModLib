@@ -5,11 +5,6 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class FontStyleAsset : ObjectBase<UFontStyleAsset>
 {
-
-}
-
-public unsafe class FontStyleData : ObjectBase<FFontStyleData>
-{
-
+    public FontStyleAsset(IntPtr pointer) : base(pointer) {}
 }
 

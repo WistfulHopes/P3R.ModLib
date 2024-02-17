@@ -5,6 +5,6 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class OodleNetworkTrainerCommandlet : ObjectBase<UOodleNetworkTrainerCommandlet>
 {
-
+    public OodleNetworkTrainerCommandlet(IntPtr pointer) : base(pointer) {}
 }
 

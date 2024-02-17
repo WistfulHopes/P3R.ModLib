@@ -5,20 +5,15 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class Overlays : ObjectBase<UOverlays>
 {
-}
+    public Overlays(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class BasicOverlays : ObjectBase<UBasicOverlays>
 {
-
+    public BasicOverlays(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class LocalizedOverlays : ObjectBase<ULocalizedOverlays>
 {
-
-}
-
-public unsafe class OverlayItem : ObjectBase<FOverlayItem>
-{
-
+    public LocalizedOverlays(IntPtr pointer) : base(pointer) {}
 }
 

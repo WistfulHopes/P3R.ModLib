@@ -3,8 +3,3 @@ using UE4SSDotNetFramework.Framework;
 
 namespace P3R.ModLib.Wrapper;
 
-public unsafe class LeanAmount : ObjectBase<FLeanAmount>
-{
-
-}
-

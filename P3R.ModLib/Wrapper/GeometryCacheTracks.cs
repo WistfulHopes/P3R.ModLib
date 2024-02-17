@@ -5,26 +5,11 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class MovieSceneGeometryCacheSection : ObjectBase<UMovieSceneGeometryCacheSection>
 {
-
+    public MovieSceneGeometryCacheSection(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class MovieSceneGeometryCacheTrack : ObjectBase<UMovieSceneGeometryCacheTrack>
 {
-
-}
-
-public unsafe class MovieSceneGeometryCacheParams : ObjectBase<FMovieSceneGeometryCacheParams>
-{
-
-}
-
-public unsafe class MovieSceneGeometryCacheSectionTemplate : ObjectBase<FMovieSceneGeometryCacheSectionTemplate>
-{
-
-}
-
-public unsafe class MovieSceneGeometryCacheSectionTemplateParameters : ObjectBase<FMovieSceneGeometryCacheSectionTemplateParameters>
-{
-
+    public MovieSceneGeometryCacheTrack(IntPtr pointer) : base(pointer) {}
 }
 

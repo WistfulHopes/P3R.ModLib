@@ -5,53 +5,23 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class ClothConfigCommon : ObjectBase<UClothConfigCommon>
 {
-}
+    public ClothConfigCommon(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class ClothSharedConfigCommon : ObjectBase<UClothSharedConfigCommon>
 {
-}
+    public ClothSharedConfigCommon(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class ClothingAssetCustomData : ObjectBase<UClothingAssetCustomData>
 {
-}
+    public ClothingAssetCustomData(IntPtr pointer) : base(pointer) {}}
 
 public unsafe class ClothingAssetCommon : ObjectBase<UClothingAssetCommon>
 {
-
+    public ClothingAssetCommon(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class ClothLODDataCommon_Legacy : ObjectBase<UClothLODDataCommon_Legacy>
 {
-
-}
-
-public unsafe class ClothConfig_Legacy : ObjectBase<FClothConfig_Legacy>
-{
-
-}
-
-public unsafe class ClothConstraintSetup_Legacy : ObjectBase<FClothConstraintSetup_Legacy>
-{
-
-}
-
-public unsafe class ClothLODDataCommon : ObjectBase<FClothLODDataCommon>
-{
-
-}
-
-public unsafe class ClothPhysicalMeshData : ObjectBase<FClothPhysicalMeshData>
-{
-
-}
-
-public unsafe class PointWeightMap : ObjectBase<FPointWeightMap>
-{
-
-}
-
-public unsafe class ClothParameterMask_Legacy : ObjectBase<FClothParameterMask_Legacy>
-{
-
+    public ClothLODDataCommon_Legacy(IntPtr pointer) : base(pointer) {}
 }
 

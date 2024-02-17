@@ -5,7 +5,7 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class StaticMeshDescription : ObjectBase<UStaticMeshDescription>
 {
-
+    public StaticMeshDescription(IntPtr pointer) : base(pointer) {}
     public void SetVertexInstanceUV(FVertexInstanceID VertexInstanceID, FVector2D UV, int UVIndex)
     {
         Span<(string name, object value)> @params = [
@@ -13,7 +13,7 @@ public unsafe class StaticMeshDescription : ObjectBase<UStaticMeshDescription>
             ("UV", UV), 
             ("UVIndex", UVIndex)
         ];
-        ProcessEvent(GetFunction("SetVertexInstanceUV"),  @params);
+        ProcessEvent(GetFunction("SetVertexInstanceUV"), @params);
     }
     public void SetPolygonGroupMaterialSlotName(FPolygonGroupID PolygonGroupID, ref FName SlotName)
     {
@@ -21,7 +21,7 @@ public unsafe class StaticMeshDescription : ObjectBase<UStaticMeshDescription>
             ("PolygonGroupID", PolygonGroupID), 
             ("SlotName", SlotName)
         ];
-        ProcessEvent(GetFunction("SetPolygonGroupMaterialSlotName"),  @params);
+        ProcessEvent(GetFunction("SetPolygonGroupMaterialSlotName"), @params);
     }
     public FVector2D GetVertexInstanceUV(FVertexInstanceID VertexInstanceID, int UVIndex)
     {
@@ -29,7 +29,7 @@ public unsafe class StaticMeshDescription : ObjectBase<UStaticMeshDescription>
             ("VertexInstanceID", VertexInstanceID), 
             ("UVIndex", UVIndex)
         ];
-        return ProcessEvent<FVector2D>(GetFunction("GetVertexInstanceUV"),  @params);
+        return ProcessEvent<FVector2D>(GetFunction("GetVertexInstanceUV"), @params);
     }
     public void CreateCube(FVector Center, FVector HalfExtents, FPolygonGroupID PolygonGroup, ref FPolygonID PolygonID_PlusX, ref FPolygonID PolygonID_MinusX, ref FPolygonID PolygonID_PlusY, ref FPolygonID PolygonID_MinusY, ref FPolygonID PolygonID_PlusZ, ref FPolygonID PolygonID_MinusZ)
     {
@@ -44,12 +44,7 @@ public unsafe class StaticMeshDescription : ObjectBase<UStaticMeshDescription>
             ("PolygonID_PlusZ", PolygonID_PlusZ), 
             ("PolygonID_MinusZ", PolygonID_MinusZ)
         ];
-        ProcessEvent(GetFunction("CreateCube"),  @params);
+        ProcessEvent(GetFunction("CreateCube"), @params);
     }
-}
-
-public unsafe class UVMapSettings : ObjectBase<FUVMapSettings>
-{
-
 }
 

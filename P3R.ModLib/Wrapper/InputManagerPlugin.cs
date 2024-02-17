@@ -5,18 +5,18 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class InputManager : ObjectBase<AInputManager>
 {
-
+    public InputManager(IntPtr pointer) : base(pointer) {}
     public void EnableInputManager()
     {
         Span<(string name, object value)> @params = [
         ];
-        ProcessEvent(GetFunction("EnableInputManager"),  @params);
+        ProcessEvent(GetFunction("EnableInputManager"), @params);
     }
     public void DisableInputManager()
     {
         Span<(string name, object value)> @params = [
         ];
-        ProcessEvent(GetFunction("DisableInputManager"),  @params);
+        ProcessEvent(GetFunction("DisableInputManager"), @params);
     }
 }
 

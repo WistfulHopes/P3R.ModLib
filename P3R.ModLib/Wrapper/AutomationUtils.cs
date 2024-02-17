@@ -5,7 +5,7 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class AutomationUtilsBlueprintLibrary : ObjectBase<UAutomationUtilsBlueprintLibrary>
 {
-
+    public AutomationUtilsBlueprintLibrary(IntPtr pointer) : base(pointer) {}
     public void TakeGameplayAutomationScreenshot(FString ScreenshotName, float MaxGlobalError, float MaxLocalError, FString MapNameOverride)
     {
         Span<(string name, object value)> @params = [
@@ -14,7 +14,7 @@ public unsafe class AutomationUtilsBlueprintLibrary : ObjectBase<UAutomationUtil
             ("MaxLocalError", MaxLocalError), 
             ("MapNameOverride", MapNameOverride)
         ];
-        ProcessEvent(GetFunction("TakeGameplayAutomationScreenshot"),  @params);
+        ProcessEvent(GetFunction("TakeGameplayAutomationScreenshot"), @params);
     }
 }
 

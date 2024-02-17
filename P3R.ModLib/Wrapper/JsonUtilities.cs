@@ -5,10 +5,5 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class JsonUtilitiesDummyObject : ObjectBase<UJsonUtilitiesDummyObject>
 {
-}
-
-public unsafe class JsonObjectWrapper : ObjectBase<FJsonObjectWrapper>
-{
-
-}
+    public JsonUtilitiesDummyObject(IntPtr pointer) : base(pointer) {}}
 

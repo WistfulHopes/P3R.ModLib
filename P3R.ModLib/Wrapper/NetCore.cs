@@ -5,11 +5,6 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class NetAnalyticsAggregatorConfig : ObjectBase<UNetAnalyticsAggregatorConfig>
 {
-
-}
-
-public unsafe class NetAnalyticsDataConfig : ObjectBase<FNetAnalyticsDataConfig>
-{
-
+    public NetAnalyticsAggregatorConfig(IntPtr pointer) : base(pointer) {}
 }
 

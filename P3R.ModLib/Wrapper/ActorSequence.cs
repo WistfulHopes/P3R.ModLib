@@ -5,30 +5,15 @@ namespace P3R.ModLib.Wrapper;
 
 public unsafe class ActorSequence : ObjectBase<UActorSequence>
 {
-
+    public ActorSequence(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class ActorSequenceComponent : ObjectBase<UActorSequenceComponent>
 {
-
+    public ActorSequenceComponent(IntPtr pointer) : base(pointer) {}
 }
 
 public unsafe class ActorSequencePlayer : ObjectBase<UActorSequencePlayer>
 {
-}
-
-public unsafe class ActorSequenceObjectReferenceMap : ObjectBase<FActorSequenceObjectReferenceMap>
-{
-
-}
-
-public unsafe class ActorSequenceObjectReferences : ObjectBase<FActorSequenceObjectReferences>
-{
-
-}
-
-public unsafe class ActorSequenceObjectReference : ObjectBase<FActorSequenceObjectReference>
-{
-
-}
+    public ActorSequencePlayer(IntPtr pointer) : base(pointer) {}}
 
